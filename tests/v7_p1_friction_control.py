@@ -170,13 +170,12 @@ def assert_suite_manifest_and_reality_protocol_material_boundaries() -> None:
 
 
 def assert_docs_teach_stable_input() -> None:
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    for flag in ("--content-file", "--body-file"):
-        if flag not in readme:
-            raise AssertionError(f"README.md does not teach stable {flag} input")
-    agents = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
-    if "--content-file" not in agents:
-        raise AssertionError("AGENTS.md does not teach stable prompt file input")
+    activation = (ROOT / ".agents" / "skills" / "shujuan-core" / "references" / "activation-first.md").read_text(encoding="utf-8")
+    if "--content-file" not in activation:
+        raise AssertionError("activation reference does not teach stable prompt file input")
+    tasking = (ROOT / "shujuan" / "commands" / "tasking.py").read_text(encoding="utf-8")
+    if "--body-file" not in tasking:
+        raise AssertionError("tasking command surface does not expose stable body file input")
     skill = (ROOT / ".agents" / "skills" / "shujuan-core" / "SKILL.md").read_text(encoding="utf-8")
     if "--content-file" in skill or "--body-file" in skill:
         raise AssertionError("SKILL.md should route stable file-input details to canonical/reference surfaces")

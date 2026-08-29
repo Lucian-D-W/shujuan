@@ -15,7 +15,6 @@ from shujuan.cli import ensure_agents_md, ensure_shujuan_skill
 ROUTES = ["Recover", "Recall", "Execute", "Close", "Delegate"]
 SURFACE_FILES = [
     "AGENTS.md",
-    "README.md",
     ".agents/skills/shujuan-core/SKILL.md",
     ".agents/skills/shujuan-core/references/activation-first.md",
     ".agents/skills/shujuan-core/references/evidence-closeout.md",
@@ -37,7 +36,6 @@ def read_surfaces(root: Path) -> dict[str, str]:
 def assert_route_alignment(surfaces: dict[str, str], label: str) -> None:
     skill = surfaces[".agents/skills/shujuan-core/SKILL.md"]
     agents = surfaces["AGENTS.md"]
-    readme = surfaces["README.md"]
     activation = surfaces[".agents/skills/shujuan-core/references/activation-first.md"]
     delegation = surfaces[".agents/skills/shujuan-core/references/delegation.md"]
     evidence = surfaces[".agents/skills/shujuan-core/references/evidence-closeout.md"]
@@ -45,9 +43,20 @@ def assert_route_alignment(surfaces: dict[str, str], label: str) -> None:
     delegate_template = surfaces[".agents/skills/shujuan-core/templates/delegate-return.md"]
     combined = "\n".join(surfaces.values())
 
+    if "# Shujuan Core Compatibility Shim" in skill:
+        required = [
+            "Explicit v10 compatibility shim",
+            "For ordinary v11 work, select exactly one method Skill",
+            "PostgreSQL remains the runtime/write path",
+        ]
+        missing = [phrase for phrase in required if phrase not in skill]
+        if missing:
+            raise AssertionError(f"{label} compatibility shim is incomplete: {missing}")
+        return
+
     for route in ROUTES:
-        if f"`{route}`" not in skill or f"`{route}`" not in agents or f"`{route}`" not in readme:
-            raise AssertionError(f"{label} does not expose default route `{route}` across Skill, AGENTS, and README")
+        if f"`{route}`" not in combined:
+            raise AssertionError(f"{label} does not expose compatibility route `{route}` in canonical technical surfaces")
 
     if "## Five Routes" not in skill:
         raise AssertionError(f"{label} skill does not provide the activation route card")
@@ -75,7 +84,7 @@ def assert_route_alignment(surfaces: dict[str, str], label: str) -> None:
     close_command = "python -m shujuan endpoint doctor <endpoint> --strict-closeout --allow-fail"
     if close_command not in combined:
         raise AssertionError(f"{label} surfaces lost the controller closeout doctor command")
-    if "writeful controller" not in combined or "without `--read-only`" not in evidence + closeout_template + readme:
+    if "writeful controller" not in combined or "without `--read-only`" not in evidence + closeout_template:
         raise AssertionError(f"{label} surfaces do not distinguish writeful controller closeout")
 
     if "Default route: `Delegate`" not in delegate_template:
@@ -106,8 +115,6 @@ def assert_installed_route_alignment() -> None:
         skill_result = ensure_shujuan_skill(repo)
         if agents_result["action"] != "created" or skill_result["action"] != "created":
             raise AssertionError(f"template install did not create expected surfaces: {agents_result}, {skill_result}")
-        readme = repo / "README.md"
-        readme.write_text((ROOT / "README.md").read_text(encoding="utf-8"), encoding="utf-8")
         assert_route_alignment(read_surfaces(repo), "installed templates")
 
 

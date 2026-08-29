@@ -143,7 +143,10 @@ def main() -> int:
         print(json.dumps({"ok": True, "skipped": "native PostgreSQL binaries not found"}))
         return 0
 
-    assert_v3_terms((ROOT / "README.md").read_text(encoding="utf-8"), "README.md")
+    assert_v3_terms(
+        (ROOT / ".agents" / "skills" / "shujuan-core" / "references" / "modes-and-terms.md").read_text(encoding="utf-8"),
+        "modes-and-terms.md",
+    )
     assert_compatibility_shim((ROOT / ".agents" / "skills" / "shujuan-core" / "SKILL.md").read_text(encoding="utf-8"), "shujuan-core SKILL.md")
     with tempfile.TemporaryDirectory(prefix="shujuan-invariants-", ignore_cleanup_errors=True) as temp:
         repo = Path(temp)

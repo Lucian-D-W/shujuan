@@ -27,8 +27,8 @@
     },
     {
       "path": ".agents/skills/shujuan-core/references/delegation.md",
-      "sha256": "98d886a127db7ed54ade4985a37a44f71ff66d8f338f3424c5617ce2fcea6333",
-      "size": 2919
+      "sha256": "6bdafaf1ad743d57621f486ff4e7a62f6d778cf5df4caab0c8da3822844c0135",
+      "size": 2908
     },
     {
       "path": ".agents/skills/shujuan-core/references/evidence-closeout.md",
@@ -187,8 +187,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "58991381612d02fc1069818e9f93d7d755edcf92dacb776ad367064fd33ccab6",
-      "size": 36239
+      "sha256": "cb83923040a03a626c7c1c853eab4005591e1c0828e996d878e1adf7abe439cd",
+      "size": 1363
     },
     {
       "path": "docs/README.md",
@@ -822,8 +822,8 @@
     },
     {
       "path": "tests/governance_invariants.py",
-      "sha256": "0aa373e7dd59450f31042d5cc6ea826b461e8cab4e204ba559d8de4d4fea0341",
-      "size": 68371
+      "sha256": "42b5f1b24a6bac53b6417608ad7123361805f535d0d575bde3f8accdf294b8c6",
+      "size": 68467
     },
     {
       "path": "tests/helpers/__init__.py",
@@ -1097,13 +1097,13 @@
     },
     {
       "path": "tests/v7_p0_10_route_guidance.py",
-      "sha256": "b1e28b882bfcc9e91b0d10513db5f2413d79a98237a248a7c6c51bb3410e7170",
-      "size": 7014
+      "sha256": "8b4d42a855b44f507a58344be92c51b6f680ba2130665bafef0e2b6b5006d3ef",
+      "size": 7208
     },
     {
       "path": "tests/v7_p1_friction_control.py",
-      "sha256": "1a6f9ac20eac16bd468acfc13766b0b2bd8879e109d15b2d895eb8c857ed6498",
-      "size": 10481
+      "sha256": "4bb0adc53328b5789fb7611fd4c0fa4c6bf1bee875eda594b50640715bd1d107",
+      "size": 10552
     },
     {
       "path": "tests/v7_weird_behavior_fixes.py",
