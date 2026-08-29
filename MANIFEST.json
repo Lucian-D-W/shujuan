@@ -1,0 +1,1196 @@
+{
+  "files": [
+    {
+      "path": ".agents/skills/shujuan-capture/SKILL.md",
+      "sha256": "6c3834817361daacb3b5103f659d8be3edee8f9839746264cd88ff20ecbff57c",
+      "size": 700
+    },
+    {
+      "path": ".agents/skills/shujuan-close/SKILL.md",
+      "sha256": "2f73d4e83c4a198821b7256392c58706abfdef319dd1f5ac42b80ea005e35e03",
+      "size": 1088
+    },
+    {
+      "path": ".agents/skills/shujuan-close/templates/closeout-handoff.md",
+      "sha256": "d44710f03e1e2c180c791cb5e90475ba5d60e8cbce7cade2ec940d7fcecf6de1",
+      "size": 182
+    },
+    {
+      "path": ".agents/skills/shujuan-core/SKILL.md",
+      "sha256": "0c665e58a69008806e359815e0e9443ba941847611db6064447d463e7871937c",
+      "size": 712
+    },
+    {
+      "path": ".agents/skills/shujuan-core/references/activation-first.md",
+      "sha256": "3bea7df15f8dcc072e50a0d0346fa0cc03f15de101545a9e6a39a7c9902ed645",
+      "size": 9129
+    },
+    {
+      "path": ".agents/skills/shujuan-core/references/delegation.md",
+      "sha256": "98d886a127db7ed54ade4985a37a44f71ff66d8f338f3424c5617ce2fcea6333",
+      "size": 2919
+    },
+    {
+      "path": ".agents/skills/shujuan-core/references/evidence-closeout.md",
+      "sha256": "72d14ec99ee5c6afdd94a411f4b2139c4fe1e5f1363b09855ffd9d507d1deca7",
+      "size": 3005
+    },
+    {
+      "path": ".agents/skills/shujuan-core/references/modes-and-terms.md",
+      "sha256": "2826f34374307791b5c7c1610ef27c60adf9b8515cabc9ec6bc1b822468751d3",
+      "size": 4080
+    },
+    {
+      "path": ".agents/skills/shujuan-core/references/plan-to-db-task-chain-hygiene.md",
+      "sha256": "874663ab5e7eb4123973619a4e1ca4396bf9b1e09ca3dd22fde8889209217efe",
+      "size": 8734
+    },
+    {
+      "path": ".agents/skills/shujuan-core/references/postgres-runtime.md",
+      "sha256": "ecaba31e5e5fa320b38c6a7130c0a3c3bbee881eda009e1c0842bf0a2cd8bb16",
+      "size": 1441
+    },
+    {
+      "path": ".agents/skills/shujuan-core/references/v10-ontology-relation-gate.md",
+      "sha256": "6dfa759546d117f55c59cb6cd18df8dc3d12d01a9fd22ccbeea754d736a72421",
+      "size": 2002
+    },
+    {
+      "path": ".agents/skills/shujuan-core/templates/closeout-handoff.md",
+      "sha256": "6c994348b4a2f3ef9871f10b6e8c1154227a78856fa5082959db195085ca5655",
+      "size": 759
+    },
+    {
+      "path": ".agents/skills/shujuan-core/templates/delegate-return.md",
+      "sha256": "b8dacb0451d731ec7ad3bab30d12a86b58f783d058e8ff9424d0845638125b61",
+      "size": 2131
+    },
+    {
+      "path": ".agents/skills/shujuan-core/templates/reviewer-return.md",
+      "sha256": "2fbec8ecb1fbb211bfcc9780db1c79e20c3653dd676c0b46510d33cb02d4a1bb",
+      "size": 585
+    },
+    {
+      "path": ".agents/skills/shujuan-delegate/SKILL.md",
+      "sha256": "d0d2a56f04308153ac0be33fce9fa42bd899cb34443b754ad47ad3d1b44623eb",
+      "size": 1136
+    },
+    {
+      "path": ".agents/skills/shujuan-delegate/templates/delegate-return.md",
+      "sha256": "7ce76af6d427d5dd478801fc26d06f738bb60796e6a8a46986a1c84532f0adee",
+      "size": 179
+    },
+    {
+      "path": ".agents/skills/shujuan-evolve/SKILL.md",
+      "sha256": "3e141be08b29b278f4f8aa37fd4f1a8cc9c6273acea1deac32231d5f15b25a8c",
+      "size": 1156
+    },
+    {
+      "path": ".agents/skills/shujuan-execute/SKILL.md",
+      "sha256": "911b3b0f7842037a045d6b9f6f2b4eea5b438897fd1cf495dd50ec0ffdd7045d",
+      "size": 1060
+    },
+    {
+      "path": ".agents/skills/shujuan-harness/SKILL.md",
+      "sha256": "7b126a9226f5231a4bd88b6d8243079ac254ddf1488c71e4c81c965b0905832a",
+      "size": 1164
+    },
+    {
+      "path": ".agents/skills/shujuan-harness/templates/attention-contract.md",
+      "sha256": "e5f57821a616e679d2e2b6a999e43c4da26747460a16e5049644cbfcc283049c",
+      "size": 212
+    },
+    {
+      "path": ".agents/skills/shujuan-recall/SKILL.md",
+      "sha256": "dff12e7ac5b2950383e4726d264b9229991a73026bc434482156bd01cc0a72c7",
+      "size": 1317
+    },
+    {
+      "path": ".agents/skills/shujuan-recall/templates/claim-ledger.md",
+      "sha256": "629018ee7ef03c6a83244311d2661cb428844a671638636d4af3734b0a6fe8f0",
+      "size": 184
+    },
+    {
+      "path": ".agents/skills/shujuan-recall/templates/recall-frontier.md",
+      "sha256": "e031ab178139d0a68147c697ec5c6b29ecd7af2cfe37be8285813fdc976c5cf3",
+      "size": 192
+    },
+    {
+      "path": ".agents/skills/shujuan-recall/templates/recall-stop-decision.md",
+      "sha256": "b6918e76c9945386784bf7395815d80087ef977c90675717c9ffb37ada659b8c",
+      "size": 142
+    },
+    {
+      "path": ".codex/agents/shujuan-controller.toml",
+      "sha256": "b595789f698e1d5a94f310138170c4e2db8628941ffdcc2e344034fd52df4591",
+      "size": 453
+    },
+    {
+      "path": ".codex/agents/shujuan-researcher.toml",
+      "sha256": "61d6438d24786797043433211f34f356bafd4ba58d10be890ff70cf227a6a110",
+      "size": 358
+    },
+    {
+      "path": ".codex/agents/shujuan-reviewer.toml",
+      "sha256": "705f098ad4ff9a71282e75723fb0d4182a1c3333067eea3d0880bb215ed18abb",
+      "size": 384
+    },
+    {
+      "path": ".codex/agents/shujuan-worker.toml",
+      "sha256": "072d310f056b5ba9264caa255a7d039611f777dd08c948fffe4f443c110b3ff7",
+      "size": 489
+    },
+    {
+      "path": ".codex/agents/shujuan-writer.toml",
+      "sha256": "f67bd7393c5e865573685f66251c828423ca41c65262546c8e5ac5d09776cb2e",
+      "size": 354
+    },
+    {
+      "path": ".codex/hooks.json",
+      "sha256": "db5936c1719d9a4c5e7310eba70237c3f0270eeaddb3af6ca71cf5de0b17b97b",
+      "size": 614
+    },
+    {
+      "path": ".codex/hooks/shujuan-method-hint.py",
+      "sha256": "298b1788217aa011d9f27e6a32ba04b18d379647d159fa189cff71edefc6976d",
+      "size": 2915
+    },
+    {
+      "path": ".codex/hooks/shujuan-pretool-guard.py",
+      "sha256": "0396264dbaeb4e478e04899d795dc112eae33cfe1104e0edc184e58d5b6f9f67",
+      "size": 2227
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "d8a04db0288789da2d6c8e4fbe0e30ba12eb7fdf39bb6815e5f4db5074596b94",
+      "size": 275
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "012f3fc8838cfa85cf218fcf41a7735b1697858c7abbf3eeb7cc60f4de8f23a8",
+      "size": 447
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "c549149bf6039fac7b0023dd19ef8efa435b09961184466ecb0ed2b92c0420ab",
+      "size": 6205
+    },
+    {
+      "path": "CLAUDE.md",
+      "sha256": "69617151b3628ecbe53d86e9ceb38dd881e60dd93338300d0cb2cd138e218159",
+      "size": 414
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "size": 11357
+    },
+    {
+      "path": "README.md",
+      "sha256": "58991381612d02fc1069818e9f93d7d755edcf92dacb776ad367064fd33ccab6",
+      "size": 36239
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "9c6b2459497c05d4d54450b964334515e2ee61baaf5db3cb9db93168b405f6a5",
+      "size": 784
+    },
+    {
+      "path": "docs/architecture.md",
+      "sha256": "1549306f39868168678f0b121d7028ffb46d51abff8a1e06ee1d6fca37878805",
+      "size": 38800
+    },
+    {
+      "path": "docs/guides/windows-workbench.md",
+      "sha256": "b4dffeb9bd3ff0b1c4efeb8096b76d9a7d069f7a3d6bc1a60079d550ac3b1eb3",
+      "size": 2970
+    },
+    {
+      "path": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md",
+      "sha256": "e70d7ea2f74601d54c5a9a349846cd09c67551b94da2f81d5e8ad4b78e86ac1b",
+      "size": 66170
+    },
+    {
+      "path": "docs/history/shujuan-v11-migration-release-notes-2026-06-26.md",
+      "sha256": "eba35a13247c408c644f3e5ed5e82855aa48d6f8dec6729db9356a7bd259f58f",
+      "size": 2201
+    },
+    {
+      "path": "docs/history/shujuan-v11-task-chain-2026-06-26.json",
+      "sha256": "b737d81616f4413656c363931f56eb94ad414b21aa398199c2a01e6bc90feb6a",
+      "size": 82689
+    },
+    {
+      "path": "docs/history/shujuan-v11.2-verification-coverage-2026-06-28.json",
+      "sha256": "c2fa02d0da76de9d0c2708a28c5299a5b5a21b5572bc92e477159cc73cfd70be",
+      "size": 3603
+    },
+    {
+      "path": "docs/plans/2026-08-30-repository-maintainability-privacy-cleanup-task-chain.json",
+      "sha256": "4537f5b91c61b409520543dfe3b3076b5d09b359d1c29f84a7a12424a59ce072",
+      "size": 10817
+    },
+    {
+      "path": "docs/plans/2026-08-30-repository-maintainability-privacy-cleanup.md",
+      "sha256": "8f4f0548e991069c161dcc5ec78596aedc7779dd539244632fea55c09ab46123",
+      "size": 6129
+    },
+    {
+      "path": "migrations/shujuan/001_agcp10_minimal_data_model.sql",
+      "sha256": "c7d61e3b5f456d9efa12daf6417f41ed8fd93afcaee3f0dc3ccc31b7fcc926d9",
+      "size": 5196
+    },
+    {
+      "path": "migrations/shujuan/002_v5_dccp_minimal_collaboration.sql",
+      "sha256": "e0173aa5c4141139ecf6aba8faab8060a650a8834b115b7fc953b81899dd1664",
+      "size": 2928
+    },
+    {
+      "path": "migrations/shujuan/003_v5_runtime_schema_ownership.sql",
+      "sha256": "d7161f27641ccc3d9d7903b1cb33b90b8fa7c7d5d0de37cb42669b8b6916ac81",
+      "size": 11373
+    },
+    {
+      "path": "migrations/shujuan/004_p2_physical_schema_contraction.sql",
+      "sha256": "eae432f2911f6a5bf8ebfec435ef08ed72bdaa8784b96f78945b608832cb0f9d",
+      "size": 1441
+    },
+    {
+      "path": "migrations/shujuan/README.md",
+      "sha256": "9e2932309f6764d5162fce0edc5da4a6320015cf7a5afe83112c40bc1c922069",
+      "size": 323
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "a92a2004426a24fe126046d664f142a4a8430e36fb2735a39dda5e0c9cd368bb",
+      "size": 37395
+    },
+    {
+      "path": "package.json",
+      "sha256": "b582834aa9d63ebd7268aa3c16c53832191374048f2762aa946cdd09d0e3b11a",
+      "size": 362
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "91977770fbedad646931ce6be6c8ebe01bbcb8a987aa64753fd8e7f7ee27df6d",
+      "size": 697
+    },
+    {
+      "path": "scripts/audit_public_repository.py",
+      "sha256": "5bffde047a3f8e53d42226819995e556f328f1137fd4ea78b2d19d1a50c973d6",
+      "size": 11985
+    },
+    {
+      "path": "scripts/audit_runtime_storage.py",
+      "sha256": "bf03d6371921e921ec7bc1260057015a8bb96b61f9a6c6944b1c1a6544621a42",
+      "size": 9975
+    },
+    {
+      "path": "scripts/update_release_manifest.py",
+      "sha256": "f1af25b631cd78104b32921a3567924669c1b42c7a7ec0ffa2192a31b6248664",
+      "size": 1822
+    },
+    {
+      "path": "scripts/v11_2_replay_evidence.py",
+      "sha256": "60e57f201e9554298a8aecf1c03cec638ab7ba587225147179f4473413f17d32",
+      "size": 7091
+    },
+    {
+      "path": "scripts/verify_release_manifest.py",
+      "sha256": "bb060d9fc7d164b19fa3aa86b259245d12219a132a14667e239ed78d7eedf10c",
+      "size": 9621
+    },
+    {
+      "path": "scripts/windows/install-shujuan-workbench-shortcut.ps1",
+      "sha256": "5bdbbf3959d93e130670718ab356813cdac7988b6c3f047ecebacf6324301d37",
+      "size": 4784
+    },
+    {
+      "path": "scripts/windows/open-shujuan-workbench.cmd",
+      "sha256": "fb239681ffd4e0c7a19453281a2bdd36c97c80ab0bb179cf8983184b510734df",
+      "size": 277
+    },
+    {
+      "path": "scripts/windows/open-shujuan-workbench.ps1",
+      "sha256": "e9ddfee977ab85db0742b6f5e99b2af2e8d8b8782574196552416113b65ae3ea",
+      "size": 16113
+    },
+    {
+      "path": "shujuan/__init__.py",
+      "sha256": "e3f559871d14ed1ff834b6ebbf3ef59bb66daa5209ba6426df618c657b699f44",
+      "size": 109
+    },
+    {
+      "path": "shujuan/__main__.py",
+      "sha256": "d220d88dd9a25cd0629c5176dd6532a2db1da40eb014a8e80796b0ddeb134918",
+      "size": 83
+    },
+    {
+      "path": "shujuan/assets/AGENTS.md",
+      "sha256": "d61a33929f608bd7f58d1a7053c74365db9dc771339774c0b4cd89c5dc2a6cad",
+      "size": 6206
+    },
+    {
+      "path": "shujuan/assets/agents/shujuan-controller.toml",
+      "sha256": "b595789f698e1d5a94f310138170c4e2db8628941ffdcc2e344034fd52df4591",
+      "size": 453
+    },
+    {
+      "path": "shujuan/assets/agents/shujuan-researcher.toml",
+      "sha256": "61d6438d24786797043433211f34f356bafd4ba58d10be890ff70cf227a6a110",
+      "size": 358
+    },
+    {
+      "path": "shujuan/assets/agents/shujuan-reviewer.toml",
+      "sha256": "705f098ad4ff9a71282e75723fb0d4182a1c3333067eea3d0880bb215ed18abb",
+      "size": 384
+    },
+    {
+      "path": "shujuan/assets/agents/shujuan-worker.toml",
+      "sha256": "072d310f056b5ba9264caa255a7d039611f777dd08c948fffe4f443c110b3ff7",
+      "size": 489
+    },
+    {
+      "path": "shujuan/assets/agents/shujuan-writer.toml",
+      "sha256": "f67bd7393c5e865573685f66251c828423ca41c65262546c8e5ac5d09776cb2e",
+      "size": 354
+    },
+    {
+      "path": "shujuan/assets/hooks.json",
+      "sha256": "db5936c1719d9a4c5e7310eba70237c3f0270eeaddb3af6ca71cf5de0b17b97b",
+      "size": 614
+    },
+    {
+      "path": "shujuan/assets/hooks/shujuan-method-hint.py",
+      "sha256": "298b1788217aa011d9f27e6a32ba04b18d379647d159fa189cff71edefc6976d",
+      "size": 2915
+    },
+    {
+      "path": "shujuan/assets/hooks/shujuan-pretool-guard.py",
+      "sha256": "0396264dbaeb4e478e04899d795dc112eae33cfe1104e0edc184e58d5b6f9f67",
+      "size": 2227
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-capture/SKILL.md",
+      "sha256": "6c3834817361daacb3b5103f659d8be3edee8f9839746264cd88ff20ecbff57c",
+      "size": 700
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-close/SKILL.md",
+      "sha256": "2f73d4e83c4a198821b7256392c58706abfdef319dd1f5ac42b80ea005e35e03",
+      "size": 1088
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-close/templates/closeout-handoff.md",
+      "sha256": "d44710f03e1e2c180c791cb5e90475ba5d60e8cbce7cade2ec940d7fcecf6de1",
+      "size": 182
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-core/SKILL.md",
+      "sha256": "0c665e58a69008806e359815e0e9443ba941847611db6064447d463e7871937c",
+      "size": 712
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-core/references/activation-first.md",
+      "sha256": "3bea7df15f8dcc072e50a0d0346fa0cc03f15de101545a9e6a39a7c9902ed645",
+      "size": 9129
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-core/references/delegation.md",
+      "sha256": "6bdafaf1ad743d57621f486ff4e7a62f6d778cf5df4caab0c8da3822844c0135",
+      "size": 2908
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-core/references/evidence-closeout.md",
+      "sha256": "72d14ec99ee5c6afdd94a411f4b2139c4fe1e5f1363b09855ffd9d507d1deca7",
+      "size": 3005
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-core/references/modes-and-terms.md",
+      "sha256": "2826f34374307791b5c7c1610ef27c60adf9b8515cabc9ec6bc1b822468751d3",
+      "size": 4080
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-core/references/plan-to-db-task-chain-hygiene.md",
+      "sha256": "874663ab5e7eb4123973619a4e1ca4396bf9b1e09ca3dd22fde8889209217efe",
+      "size": 8734
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-core/references/postgres-runtime.md",
+      "sha256": "ecaba31e5e5fa320b38c6a7130c0a3c3bbee881eda009e1c0842bf0a2cd8bb16",
+      "size": 1441
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-core/references/v10-ontology-relation-gate.md",
+      "sha256": "6dfa759546d117f55c59cb6cd18df8dc3d12d01a9fd22ccbeea754d736a72421",
+      "size": 2002
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-core/templates/closeout-handoff.md",
+      "sha256": "6c994348b4a2f3ef9871f10b6e8c1154227a78856fa5082959db195085ca5655",
+      "size": 759
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-core/templates/delegate-return.md",
+      "sha256": "b8dacb0451d731ec7ad3bab30d12a86b58f783d058e8ff9424d0845638125b61",
+      "size": 2131
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-core/templates/reviewer-return.md",
+      "sha256": "2fbec8ecb1fbb211bfcc9780db1c79e20c3653dd676c0b46510d33cb02d4a1bb",
+      "size": 585
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-delegate/SKILL.md",
+      "sha256": "d0d2a56f04308153ac0be33fce9fa42bd899cb34443b754ad47ad3d1b44623eb",
+      "size": 1136
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-delegate/templates/delegate-return.md",
+      "sha256": "7ce76af6d427d5dd478801fc26d06f738bb60796e6a8a46986a1c84532f0adee",
+      "size": 179
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-evolve/SKILL.md",
+      "sha256": "3e141be08b29b278f4f8aa37fd4f1a8cc9c6273acea1deac32231d5f15b25a8c",
+      "size": 1156
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-execute/SKILL.md",
+      "sha256": "911b3b0f7842037a045d6b9f6f2b4eea5b438897fd1cf495dd50ec0ffdd7045d",
+      "size": 1060
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-harness/SKILL.md",
+      "sha256": "7b126a9226f5231a4bd88b6d8243079ac254ddf1488c71e4c81c965b0905832a",
+      "size": 1164
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-harness/templates/attention-contract.md",
+      "sha256": "e5f57821a616e679d2e2b6a999e43c4da26747460a16e5049644cbfcc283049c",
+      "size": 212
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-recall/SKILL.md",
+      "sha256": "dff12e7ac5b2950383e4726d264b9229991a73026bc434482156bd01cc0a72c7",
+      "size": 1317
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-recall/templates/claim-ledger.md",
+      "sha256": "629018ee7ef03c6a83244311d2661cb428844a671638636d4af3734b0a6fe8f0",
+      "size": 184
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-recall/templates/recall-frontier.md",
+      "sha256": "e031ab178139d0a68147c697ec5c6b29ecd7af2cfe37be8285813fdc976c5cf3",
+      "size": 192
+    },
+    {
+      "path": "shujuan/assets/skills/shujuan-recall/templates/recall-stop-decision.md",
+      "sha256": "b6918e76c9945386784bf7395815d80087ef977c90675717c9ffb37ada659b8c",
+      "size": 142
+    },
+    {
+      "path": "shujuan/cli.py",
+      "sha256": "13c691101f8a1cf2ffd9f7c1e5695d2cac9983658dde21a4d05a0407d819c859",
+      "size": 281944
+    },
+    {
+      "path": "shujuan/commands/__init__.py",
+      "sha256": "7b80d773cef55bf1356fc549c857360fcb31d3288f653122fe9f11718eface36",
+      "size": 51
+    },
+    {
+      "path": "shujuan/commands/adapter.py",
+      "sha256": "32fe696753d702230afaf657f0c28d7703bed43dbabcee5085c1f37cd4e3b084",
+      "size": 9222
+    },
+    {
+      "path": "shujuan/commands/artifact_index.py",
+      "sha256": "a1f431c59aeeae093c8936053b644ed9da34147d132bd965abe8df573f18f455",
+      "size": 15082
+    },
+    {
+      "path": "shujuan/commands/audit.py",
+      "sha256": "73a45fb41090406fa7a94fcf81322a07da6203922297bdce89bf49242896d64c",
+      "size": 13576
+    },
+    {
+      "path": "shujuan/commands/capture.py",
+      "sha256": "be9f8b691639267d937fe45834d9e54308d002067774e1779a3fb3dfb2de10a5",
+      "size": 27788
+    },
+    {
+      "path": "shujuan/commands/delegate.py",
+      "sha256": "ca3d4966f67addc456af4cca1f17e28bf5f3dcf0d14a01b1b2eacf59e6098094",
+      "size": 15576
+    },
+    {
+      "path": "shujuan/commands/delegate_handlers.py",
+      "sha256": "52ccf822368ba6cb6b911f00db1e7466820e00b8224503142780ad05d0c1712c",
+      "size": 102991
+    },
+    {
+      "path": "shujuan/commands/discuss.py",
+      "sha256": "263b977b70cd10dbaad1e1a96341bcf2c6f713d22b098571813ae529817d819e",
+      "size": 21412
+    },
+    {
+      "path": "shujuan/commands/endpoint.py",
+      "sha256": "d90f370b1777fc904a18d30e908b85b389ae156217ba8366645e4ebb6fd88beb",
+      "size": 110903
+    },
+    {
+      "path": "shujuan/commands/evidence.py",
+      "sha256": "a74b2160306eb460ee0740f0a11d28ac7b66b5494c015011f8fc1e2476feb63f",
+      "size": 24363
+    },
+    {
+      "path": "shujuan/commands/execution.py",
+      "sha256": "6b1c500f4f337e804e5737bbfb1aa17894482163ddea9db389c71143c6702106",
+      "size": 13901
+    },
+    {
+      "path": "shujuan/commands/graph.py",
+      "sha256": "1aff6dbb765368a699ab398feadc79c1e83ad67e77edf554e51e1856b090d002",
+      "size": 83766
+    },
+    {
+      "path": "shujuan/commands/init.py",
+      "sha256": "9a540ff28a42b0079014e087aaa7dbd846079b07e40d55bce739698466fa8da9",
+      "size": 7244
+    },
+    {
+      "path": "shujuan/commands/install_layout.py",
+      "sha256": "f6859086d09e055b484dcd81fc8ae3fa257894f839c2c791c84fb6561806a40e",
+      "size": 13061
+    },
+    {
+      "path": "shujuan/commands/migrate.py",
+      "sha256": "da93afc3d40687523a8ccd67fbd47a78a935aef98ab360ee3f4576bd8846b63f",
+      "size": 21230
+    },
+    {
+      "path": "shujuan/commands/plan_to_db.py",
+      "sha256": "51f20c3f74978d7ab9cae29187c33c8f0865f53e65c57938a7c7444dd15743d6",
+      "size": 58071
+    },
+    {
+      "path": "shujuan/commands/postgres_dev.py",
+      "sha256": "442a99706259568edcdfdef6fdc73e92a534245e072f797a3209403a2c8ae815",
+      "size": 28894
+    },
+    {
+      "path": "shujuan/commands/provider.py",
+      "sha256": "b380af6148dd5158b303895eb993091f7b62aee085a8796787f67d624bfdb248",
+      "size": 22571
+    },
+    {
+      "path": "shujuan/commands/recall.py",
+      "sha256": "bcb5b98d3bb6b0f5ad74232e0e57fcb7033fd198f362ffb14c1813cc1dc80a18",
+      "size": 10017
+    },
+    {
+      "path": "shujuan/commands/report.py",
+      "sha256": "4a3d79d20bc0546918d2eee2ed287fef2ab3f1dbb5417c5159fca1b2f518eae8",
+      "size": 53214
+    },
+    {
+      "path": "shujuan/commands/review.py",
+      "sha256": "4064263d885151e081fc692c2464d8e9f4b3f7a4c788e5c154be93ab9f1a9821",
+      "size": 20165
+    },
+    {
+      "path": "shujuan/commands/route.py",
+      "sha256": "b89bb38f592a63fdd77bb13145af612b812076fcf8bd2fcda8871da6f5a3b93a",
+      "size": 51153
+    },
+    {
+      "path": "shujuan/commands/schema_stewardship.py",
+      "sha256": "73843ca1f29ea575a22c63e4e0334da6e186d563095dd626cf9c6bce877534ab",
+      "size": 35379
+    },
+    {
+      "path": "shujuan/commands/tasking.py",
+      "sha256": "e51e21c5be43de3ac59d14ad83a201fc672edaee518407c459174ebc15fd3396",
+      "size": 37320
+    },
+    {
+      "path": "shujuan/commands/workbench.py",
+      "sha256": "c940135674c1e966589c86b74f97ef95e0b0364fbff324aa1495545f25f545d8",
+      "size": 124725
+    },
+    {
+      "path": "shujuan/commands/workflow.py",
+      "sha256": "f86717857bffceadad11ed21b93cfeb62e84e4dc17b8e15b534716616d37bb48",
+      "size": 63259
+    },
+    {
+      "path": "shujuan/compat_exports.py",
+      "sha256": "ed99b937ed0d58449576df0f462d71a1834e03d6f160e55ad18307d3a9c1e6e4",
+      "size": 1599
+    },
+    {
+      "path": "shujuan/migrations/shujuan/001_agcp10_minimal_data_model.sql",
+      "sha256": "c7d61e3b5f456d9efa12daf6417f41ed8fd93afcaee3f0dc3ccc31b7fcc926d9",
+      "size": 5196
+    },
+    {
+      "path": "shujuan/migrations/shujuan/002_v5_dccp_minimal_collaboration.sql",
+      "sha256": "e0173aa5c4141139ecf6aba8faab8060a650a8834b115b7fc953b81899dd1664",
+      "size": 2928
+    },
+    {
+      "path": "shujuan/migrations/shujuan/003_v5_runtime_schema_ownership.sql",
+      "sha256": "d7161f27641ccc3d9d7903b1cb33b90b8fa7c7d5d0de37cb42669b8b6916ac81",
+      "size": 11373
+    },
+    {
+      "path": "shujuan/migrations/shujuan/004_p2_physical_schema_contraction.sql",
+      "sha256": "eae432f2911f6a5bf8ebfec435ef08ed72bdaa8784b96f78945b608832cb0f9d",
+      "size": 1441
+    },
+    {
+      "path": "shujuan/migrations/shujuan/README.md",
+      "sha256": "9e2932309f6764d5162fce0edc5da4a6320015cf7a5afe83112c40bc1c922069",
+      "size": 323
+    },
+    {
+      "path": "shujuan/schema.py",
+      "sha256": "d92c4674b6d6a0f955440cbf39b742b98180087258931c9542553fc421130823",
+      "size": 19509
+    },
+    {
+      "path": "shujuan/schema_roles.py",
+      "sha256": "a02c7fb81eacf241626c20072a28837c1ef6b309904521fb5bba9b78ebea8e13",
+      "size": 18101
+    },
+    {
+      "path": "shujuan/services/__init__.py",
+      "sha256": "c2b3f286f0b96aecf3438f800a8731e5e07dde080339cd3ea29014f2ea7e7b3e",
+      "size": 250
+    },
+    {
+      "path": "shujuan/services/activation_policy.py",
+      "sha256": "a557082f041fe0814c4fa6ca2be6bfa860b42cef5c0f188dd31662821544405b",
+      "size": 7107
+    },
+    {
+      "path": "shujuan/services/agcp_policy.py",
+      "sha256": "a12ea9a10cdac1751061c153df51f381e521c755d914924f96e208bafb56d5a1",
+      "size": 5029
+    },
+    {
+      "path": "shujuan/services/command_effects.py",
+      "sha256": "e0d9945c03f59e0723eeb85a4f86c0ceca8c432e48e5e4309acefa346eae9d9c",
+      "size": 9783
+    },
+    {
+      "path": "shujuan/services/dependencies.py",
+      "sha256": "3547bc57ef089368356ce0bbdd1d08c37020a04105ea1ce2d21cfd5d766946b6",
+      "size": 866
+    },
+    {
+      "path": "shujuan/services/endpoint_projection.py",
+      "sha256": "5207c5948fcb76e5ba061e5e1d5e68a4a3ababbdf4f7d26177574c20fc7b5e46",
+      "size": 2283
+    },
+    {
+      "path": "shujuan/services/errors.py",
+      "sha256": "7fdbcb6fd85573bd01e4f0f68b3ed6827ce42826d4baa25c7bbaf069d6be6b8c",
+      "size": 785
+    },
+    {
+      "path": "shujuan/services/evidence_policy.py",
+      "sha256": "d32808a3d76e898eee68909a984ed7c962f93123d0c50de2afe85a771a73256e",
+      "size": 6051
+    },
+    {
+      "path": "shujuan/services/method_policy.py",
+      "sha256": "1276bf710bd1def9a3ba62cec194c01a9f40d006e6ef83e14d5ab3b658385070",
+      "size": 6183
+    },
+    {
+      "path": "shujuan/services/relation_policy.py",
+      "sha256": "1204f08f825a0c7f8161bf59d1ad673f5f0295a61bbf90465ce1d814777c6389",
+      "size": 22769
+    },
+    {
+      "path": "shujuan/services/review_state.py",
+      "sha256": "769bd0a817a3e240a6971107212565fe5e1ee4c9adaa854f1296b5f110513f5e",
+      "size": 4584
+    },
+    {
+      "path": "shujuan/services/role_policy.py",
+      "sha256": "26347c88fe59c65f6ae03363e7266a1064a2d6cf3644adc2db1e56919d861453",
+      "size": 4046
+    },
+    {
+      "path": "shujuan/services/route_intent.py",
+      "sha256": "0f26e38d053926e19fb96dee2ca2ccb25b5a002ec8f6974b2dab4ae45b8c4999",
+      "size": 6536
+    },
+    {
+      "path": "shujuan/services/skill_registry.py",
+      "sha256": "87afb066c88b63aa8809f039f6e2f8b03ea4ee385fe9581a7d56404b2cd03549",
+      "size": 3512
+    },
+    {
+      "path": "shujuan/services/sovereignty_gate.py",
+      "sha256": "6f4ab992124e1db4f3c72bf9c3949acece004a20c9daf13309ecbf508855dbbe",
+      "size": 10990
+    },
+    {
+      "path": "shujuan/store.py",
+      "sha256": "33c3b232f4a4de0bbf8194a8fb094af7066daddb3fee0159b66430a6c3b5e07f",
+      "size": 35320
+    },
+    {
+      "path": "tests/agcp11_cli_workflows.py",
+      "sha256": "5b320d4fb7f3930129562e641ce27a232d31e9aa1d6c6fb81b7c0a347cfa49cf",
+      "size": 14342
+    },
+    {
+      "path": "tests/audit_import_newline_hash_stability.py",
+      "sha256": "a7dca4858f2ad3ac619d93c24aa08c7adbb558a5d8e2c31fe987d7e232a743a0",
+      "size": 8362
+    },
+    {
+      "path": "tests/cli_error_boundaries.py",
+      "sha256": "50ffd72fa5894f11742c962c8fa613b57dbd3bbbd9c7e2e22948983c67d2cb13",
+      "size": 4798
+    },
+    {
+      "path": "tests/closeout_worksheet_canonicalization.py",
+      "sha256": "637ee92d5b59b35482bfd4e21b344a15c4c581634a674016eebf51f3afc5dd47",
+      "size": 10083
+    },
+    {
+      "path": "tests/command_effects_output_surface.py",
+      "sha256": "6b95a7dcb86444cdbf8197a82f9b4ec27c005be6b0cd5df0e1264210bb3302b8",
+      "size": 10391
+    },
+    {
+      "path": "tests/compatibility_export_manifest.py",
+      "sha256": "ba6400052e76238c39fab64f4feb8e715f1aacc4abb8dad166284578c5d3377e",
+      "size": 2816
+    },
+    {
+      "path": "tests/control_gates.py",
+      "sha256": "923bc28d22fb6cc155d1398de99cc9899173999eeaf9a0653e6fa2426105039b",
+      "size": 15240
+    },
+    {
+      "path": "tests/dirty_snapshot_robustness.py",
+      "sha256": "a475d93a7e0bbb1d657ec89ef4c3524374ec4898e6a7b99d2aeeb1119d5d9c82",
+      "size": 5486
+    },
+    {
+      "path": "tests/endpoint_blocker_propagation.py",
+      "sha256": "18799a114b1225e4ea6ae2b467e90699cdfd5432c8b5faa2551595c2ca877694",
+      "size": 15794
+    },
+    {
+      "path": "tests/endpoint_doctor_read_only.py",
+      "sha256": "addb95c8181b6d0e466e8deebccfa87a1834a91f3fa081f8556cc09030bdd6fe",
+      "size": 6389
+    },
+    {
+      "path": "tests/evidence_task_readiness_hint.py",
+      "sha256": "0b110a7af152fca9ff2aff022c5ee4340885829a4ae332a761e82c607c7d6c6f",
+      "size": 5336
+    },
+    {
+      "path": "tests/exec_id_resolution.py",
+      "sha256": "ff2fc6e78381660364f5e3055e6ee4c03a1a69b1cd699f64bd63c866b3280560",
+      "size": 6750
+    },
+    {
+      "path": "tests/exec_stop_provider_boundary.py",
+      "sha256": "f49040dfcfac668e0bdb1e073f27b0c748e4d6cfa9cc8c183d5aa12eb866c583",
+      "size": 13628
+    },
+    {
+      "path": "tests/fixtures/v11_recall_benchmarks.json",
+      "sha256": "a352fd60ea0ff079eb2ac2c90f030fc4826e9b3c35029c9c52c7800bc9044edb",
+      "size": 7740
+    },
+    {
+      "path": "tests/fixtures/v11_route_method_matrix.json",
+      "sha256": "7b32d4b01e92a99bbe9b2772d93fc929c6c42351eefd37b28ff6a3ec221b3b71",
+      "size": 12433
+    },
+    {
+      "path": "tests/governance_invariants.py",
+      "sha256": "0aa373e7dd59450f31042d5cc6ea826b461e8cab4e204ba559d8de4d4fea0341",
+      "size": 68371
+    },
+    {
+      "path": "tests/helpers/__init__.py",
+      "sha256": "5544a016d1e04a903deb23a61cc66cc9dc2cbcde41b3d443944d6dd7d162ed6b",
+      "size": 27
+    },
+    {
+      "path": "tests/helpers/postgres_fixture.py",
+      "sha256": "3bc5896232033e2065076c90e3728160962c967828458ae8b814d4c838438f89",
+      "size": 3543
+    },
+    {
+      "path": "tests/minimal_data_model.py",
+      "sha256": "2f0f0596d53af9d587eab1b3ddeaf1fcf8d8392da3f8fa0e9224a3af4fd6b379",
+      "size": 17056
+    },
+    {
+      "path": "tests/n04_positive_route_alignment.py",
+      "sha256": "f9e071471b25160e8aa8e76f5feb73be4d198026c365e6b16401fb42a6613e96",
+      "size": 6585
+    },
+    {
+      "path": "tests/packaging_install.py",
+      "sha256": "5be4e6ac827ad300408e99c986cee091fc0b4ce4314228af3904d147f62bdf83",
+      "size": 5319
+    },
+    {
+      "path": "tests/plan_to_db_task_chain_hygiene.py",
+      "sha256": "75d077c7cf3362e53aeeb0bfd468990b0a41f8a0636865593547496671d3df3c",
+      "size": 21666
+    },
+    {
+      "path": "tests/postgres_backend.py",
+      "sha256": "80b36cd0f2186872ae642d07fda278401c31b4e9005032acb9516cb54f526075",
+      "size": 29409
+    },
+    {
+      "path": "tests/postgres_constraints.py",
+      "sha256": "1d6ebb973077d7c5789c29c44c384075768e49fcc5bd238064244ab7086b9919",
+      "size": 7527
+    },
+    {
+      "path": "tests/postgres_dev_credentials_permissions.py",
+      "sha256": "18e1281e87c03684902a62191fef2fc3899684298f3da84e10b8461b566b4f0f",
+      "size": 2127
+    },
+    {
+      "path": "tests/postgres_dev_ports.py",
+      "sha256": "f6d24ec022c42ddda09d38d1d2d0893211ddfe16071351f7c5740b3e532b1705",
+      "size": 2628
+    },
+    {
+      "path": "tests/postgres_fixture_helper_contract.py",
+      "sha256": "69c43b56d333fbcda333b5946ad9cf853aa2ac55354b60c793a83d3f2f41d51c",
+      "size": 1783
+    },
+    {
+      "path": "tests/postgres_runtime_ddl_repair.py",
+      "sha256": "ec5582da5245caf8a80c8c756dbf0d4c5b0297d51d391b5a814b718a96daf84c",
+      "size": 12250
+    },
+    {
+      "path": "tests/predicate_coverage_matrix.py",
+      "sha256": "278534feadcabd962ca1ff86739fe3423fc2650c6458fc546db52d2e7ea59296",
+      "size": 24614
+    },
+    {
+      "path": "tests/product_backlog_terminology.py",
+      "sha256": "9e3be4f9b48380db12a26e7be64daec02e395a30aa6feebf76e9c2c162881995",
+      "size": 9826
+    },
+    {
+      "path": "tests/provider_contract_gitnexus.py",
+      "sha256": "24336f5ab82cd75d6149b728a2e9a9530c69a52aea1576eafcaa20e70d6b7210",
+      "size": 8004
+    },
+    {
+      "path": "tests/provider_runtime_file_classification.py",
+      "sha256": "5a37d040c528e843a8566cf6db22ff483152d3eeb8f411bbe185587e4d8ec9e1",
+      "size": 12825
+    },
+    {
+      "path": "tests/publication_privacy_gate.py",
+      "sha256": "5758ba5d5eeba9a9ac8388917b17ffb32a8d6b5c46510bc4e067951960541926",
+      "size": 4143
+    },
+    {
+      "path": "tests/readiness_first_screen.py",
+      "sha256": "2947a3f555f54ea90c63748f48ecca9b90dd85ce76bb3e6ae97c310faf85ff14",
+      "size": 11316
+    },
+    {
+      "path": "tests/release_manifest_verifier.py",
+      "sha256": "567541af157e0ca94ed06ae1a14a32d535d348bd49c27eb8be2ae5bd1282139e",
+      "size": 11486
+    },
+    {
+      "path": "tests/report_attention_layers.py",
+      "sha256": "49401ea2a9cdcdf6f60bfbb2d6d53241d743a93fffb25830a4da21274eb0ade9",
+      "size": 10569
+    },
+    {
+      "path": "tests/runtime_storage_audit.py",
+      "sha256": "c6f3edf4bfe7cd92555fc5f27c403a017031ef91a36405b81355eb364610169a",
+      "size": 1042
+    },
+    {
+      "path": "tests/schema_stewardship_p0.py",
+      "sha256": "c4be9f1da122f4304f3266e56310804d19aab43596fd9d4ccc5dac43ad5303ec",
+      "size": 15923
+    },
+    {
+      "path": "tests/schema_stewardship_p1_p2.py",
+      "sha256": "f5e718f40b658fa2bb6ba98472bdcc9b910581b4f6ef59a548b3455a9a5cd8cd",
+      "size": 14353
+    },
+    {
+      "path": "tests/scope_defer_disambiguation.py",
+      "sha256": "4318c663d525ee6ce28b4879f59e50a31ca2e7f1e1241a3e220a11a6e279435f",
+      "size": 5272
+    },
+    {
+      "path": "tests/smoke_shujuan.py",
+      "sha256": "2357a82c7be8407f1035eb13bc5f0659aecb5b5ed323248c2b1782c565368aab",
+      "size": 56211
+    },
+    {
+      "path": "tests/source_non_downgrade_gate.py",
+      "sha256": "4ff4565c379b4a045cd1e2d5d83946f6d39a35488897b1adff2e32bc72e216f3",
+      "size": 9758
+    },
+    {
+      "path": "tests/sqlite_legacy_residual_classification.py",
+      "sha256": "dd272012c1b4f043bdb74d045757cb5a5dbc4996183da76773ba1b998d5b6f82",
+      "size": 3023
+    },
+    {
+      "path": "tests/v10_codex_surfaces.py",
+      "sha256": "029918985176ac6afcc44f46e196bb291df016a3c92efdc8b806bca2386fb1c6",
+      "size": 5399
+    },
+    {
+      "path": "tests/v10_post_design_acceptance_matrix.py",
+      "sha256": "c4e29b1e62efcdac7c62a4160ad2d555b232b2b1207537066b7ff8042a8525de",
+      "size": 1568
+    },
+    {
+      "path": "tests/v10_route_relation_regressions.py",
+      "sha256": "5e1e7b10b281e511a72ef3cc362fc5134c5d10cbb18f9eb6976d478f110c5e36",
+      "size": 31820
+    },
+    {
+      "path": "tests/v10_structured_errors.py",
+      "sha256": "282a721504cb3aeb1ef881d3fd6117dfbaf7632479701ee76a90d4ca416b413c",
+      "size": 4525
+    },
+    {
+      "path": "tests/v10_task_chain_source_coverage.py",
+      "sha256": "2930f076363a6086bd2b8aabe4ba7cc2b00eda3dffb425ea1714e61272f75aff",
+      "size": 14169
+    },
+    {
+      "path": "tests/v11_2_verification_repair.py",
+      "sha256": "ff3d32581916b09a380a3c5597a797b2f37b9c406ceb60dcc6889df2c8e620d5",
+      "size": 24237
+    },
+    {
+      "path": "tests/v11_3_topology_relation.py",
+      "sha256": "53ed2a90292870765a9e14abc312f2bd39387108cab6eaaf0a609f1960290eda",
+      "size": 17426
+    },
+    {
+      "path": "tests/v11_method_plane.py",
+      "sha256": "1e382e28c2b12bf4ffc83ff692b952262dade9859dd97af7ae2cddd73703791d",
+      "size": 16739
+    },
+    {
+      "path": "tests/v3_invariants.py",
+      "sha256": "2007f4a80eacf682d1f30dc80f048fc28d0ab8cd9ff477acaa147b87c5179711",
+      "size": 3521
+    },
+    {
+      "path": "tests/v4_dogfood_coverage_matrix.py",
+      "sha256": "6ce4388de772fd2a73a918dba11ab0697966f29bbcc1c05fc9be7dde4f77ecff",
+      "size": 33755
+    },
+    {
+      "path": "tests/v4_interaction_trust_layer.py",
+      "sha256": "aa20bd1ae8869855f6cc473cbd022e07165ff26dc6877e1e97abf43a99b2415c",
+      "size": 28215
+    },
+    {
+      "path": "tests/v4_mode_router_regressions.py",
+      "sha256": "cef73382ec6fb90abec587753c62a9e30a546c828b47bd6c5f69502b829817f0",
+      "size": 13798
+    },
+    {
+      "path": "tests/v4_projection_workbench.py",
+      "sha256": "13c7839c7a952570886b0af30463150e8667661206f36f1346c2b4c62a93b492",
+      "size": 16491
+    },
+    {
+      "path": "tests/v5_dccp_delegate_skeleton_regressions.py",
+      "sha256": "1fb64e89fe394d82b3d464171a03eb5cbe837917d1dbea99b7b72661ea3443f5",
+      "size": 52165
+    },
+    {
+      "path": "tests/v5_dccp_phase0_regressions.py",
+      "sha256": "9dbcfa0286fe1408f922c44bd9fec49280e56667a5c5bae1e38714763b90f5d6",
+      "size": 7861
+    },
+    {
+      "path": "tests/v6_followup_candidate_fixes.py",
+      "sha256": "010994c762cb4cf2a0761e1c5d64c2bad794d10dc72815e26ffc3ef20ccaacdc",
+      "size": 8607
+    },
+    {
+      "path": "tests/v6_p1_service_boundaries.py",
+      "sha256": "a2ccb0e6c4704f549015ef345b2a62644f484139ce01d09103ac7a501fe8d71a",
+      "size": 3711
+    },
+    {
+      "path": "tests/v6_phase0_activation_consolidation.py",
+      "sha256": "31ae6c51246c2e3bc27b6b1ba941caa16e1f319cb060d3d0022d7b1cb64f7bad",
+      "size": 3443
+    },
+    {
+      "path": "tests/v6_phase1_activation_modularization.py",
+      "sha256": "6130f782b7097309d140692addf8428c29f96d0434224026b96d4e2283dee470",
+      "size": 9989
+    },
+    {
+      "path": "tests/v6_phase2_activation_brief.py",
+      "sha256": "48d4564e730b9dde11c4653cd513351d9b43e2556c3526658243e4776dd856c3",
+      "size": 15345
+    },
+    {
+      "path": "tests/v6_phase3_delegate_capsule.py",
+      "sha256": "1425fdfdb2166b9099fb94822a7c48e65404953b83ca3c513f9258be9f2c5492",
+      "size": 10761
+    },
+    {
+      "path": "tests/v6_phase4_closeout_gates.py",
+      "sha256": "45147d46939160e69efa46021352c8c2669752337752839c0e3064faa1749c8b",
+      "size": 14322
+    },
+    {
+      "path": "tests/v6_phase5_self_use_golden.py",
+      "sha256": "28e15e4027d281033e7685814fc69418db17ed2a722084285d42cc7b97d838e7",
+      "size": 15376
+    },
+    {
+      "path": "tests/v7_active_obligation_processing.py",
+      "sha256": "02bd91c807f501c111db5244cd8f5f42f6f5c4d1519e752862a64a7945c4f5c1",
+      "size": 9501
+    },
+    {
+      "path": "tests/v7_lightweight_rules.py",
+      "sha256": "8b3d513a976f20deaad159fd94916662278552c6e282d2d7e1924ddd1f9be6d0",
+      "size": 12084
+    },
+    {
+      "path": "tests/v7_p0_08_delegate_packet_truth_labels.py",
+      "sha256": "e2c82d7e23dcd1fd982f98ca8de4a4125bb1c368f271f79ab0556822e661c463",
+      "size": 6245
+    },
+    {
+      "path": "tests/v7_p0_09_ownership_manifest.py",
+      "sha256": "47eb9bcc9fed2723d95df2dcc56e92dac27cac652bf3c19f8e675a97294b8823",
+      "size": 11474
+    },
+    {
+      "path": "tests/v7_p0_10_route_guidance.py",
+      "sha256": "b1e28b882bfcc9e91b0d10513db5f2413d79a98237a248a7c6c51bb3410e7170",
+      "size": 7014
+    },
+    {
+      "path": "tests/v7_p1_friction_control.py",
+      "sha256": "1a6f9ac20eac16bd468acfc13766b0b2bd8879e109d15b2d895eb8c857ed6498",
+      "size": 10481
+    },
+    {
+      "path": "tests/v7_weird_behavior_fixes.py",
+      "sha256": "b98030cadc86909e834de29b912717c6f2d1205504306ec23f34393828165dc4",
+      "size": 5926
+    },
+    {
+      "path": "tests/v8_p1_default_operating_surface.py",
+      "sha256": "6cf0f5c24b8319ea7fbd554ecfab76d17a645380273be0333ced853b3e49b064",
+      "size": 10959
+    },
+    {
+      "path": "tests/v9_agent_enablement_harness.py",
+      "sha256": "1a84ba1dfffb9d776c6d6e19c547b409e6a0563e4cadc640b06ced774a0bd2a5",
+      "size": 10840
+    },
+    {
+      "path": "tests/v9_simulation_repair_regressions.py",
+      "sha256": "354b99a09bea495ed44e52becc3c4c5d99fc9159c1cdfdc8257a75813ab36b1b",
+      "size": 18719
+    },
+    {
+      "path": "tests/vf_cli_report_clarity_regressions.py",
+      "sha256": "c8b6bf682e1626b55085dc8445388ee84badcd02eeebccb28be526104501c29d",
+      "size": 6385
+    },
+    {
+      "path": "tests/vf_first_batch_regressions.py",
+      "sha256": "3f141b6076d165a87cdb830db1dd699fa0730266dcbc09a1764d8cdc89ac9445",
+      "size": 9637
+    },
+    {
+      "path": "tests/vf_governance_trust_regressions.py",
+      "sha256": "ae67446165eb759fceef5767dd3b0d6d4de8537436753439e0dd2b33707281f1",
+      "size": 9348
+    },
+    {
+      "path": "tests/vf_report_discussion_visibility_regressions.py",
+      "sha256": "47c3bde441dadf2e8b909d1b081fa4a2a553fec3c73f50e278f52a1bee2a8cb7",
+      "size": 9974
+    },
+    {
+      "path": "tests/vf_workbench_bilingual_mode_regressions.py",
+      "sha256": "7ae0730eee6f70ec6668ca9ee2a98f087eec5a716be39575f0cb33e855a7062a",
+      "size": 7410
+    },
+    {
+      "path": "tests/vf_workbench_blank_canvas_regressions.py",
+      "sha256": "91649ce8c9d5743e787aa8a88edcd4eb19d9c0c5a960d08b29120fb835c2f864",
+      "size": 9844
+    },
+    {
+      "path": "tests/vf_workbench_edge_label_overlap_regressions.py",
+      "sha256": "e27bf7041c1b625a5a74788eb2d55ed03cb1acb0f8ce721b02a0bf518eff9674",
+      "size": 7384
+    },
+    {
+      "path": "tests/vf_workbench_live_service_modes.py",
+      "sha256": "f743a6081a771a0757f7955c646456349bdda6589754e205559da29dd286c9c1",
+      "size": 11284
+    },
+    {
+      "path": "tests/vf_workbench_view_logic_modes.py",
+      "sha256": "25e2958b1b4e4c4bb69f751ee4acf664be796cf538332cd31853981031ff6340",
+      "size": 9068
+    },
+    {
+      "path": "tests/vf_workbench_visual_platform_contract.py",
+      "sha256": "e1f7337fa0248de7dc3517a860b5f6b1f9fb9ae66a914bb4163a3330e8fc4352",
+      "size": 8652
+    },
+    {
+      "path": "tests/vf_workbench_windows_launcher.py",
+      "sha256": "bd29ad7ba05a17321b87561f46a873d06198c839eb767a7a448ce3d1283e93b2",
+      "size": 25044
+    },
+    {
+      "path": "tests/worker_hunk_manifest_contract.py",
+      "sha256": "d19bf7e7bb6ed181159c22f366fd34e6f5cd4dfec4e7376bc7be011710133f97",
+      "size": 4451
+    },
+    {
+      "path": "tests/workflow_command_extraction.py",
+      "sha256": "ac5bf4773d06f8b813330737aff8431e119a22d668ed3655720544102aadeaed",
+      "size": 1655
+    }
+  ],
+  "generated_for": "canonical-public-tree",
+  "schema": "shujuan.release_manifest.v11"
+}

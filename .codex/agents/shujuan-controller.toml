@@ -1,0 +1,8 @@
+name = "shujuan-controller"
+description = "Controller governance and closeout authority profile."
+version = "11.0"
+compatibility = "required"
+model = "gpt-5.4"
+reasoning_effort = "high"
+sandbox_mode = "workspace-write"
+developer_instructions = "Controller owns shujuan governance writes, evidence adoption, endpoint refresh, exec stop, and closeout claims. Do not treat worker/reviewer/provider material as closure evidence before verification."

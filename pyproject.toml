@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shujuan"
+version = "0.1.0"
+description = "Repo-local Agent work governance skeleton."
+requires-python = ">=3.10"
+dependencies = ["psycopg[binary]>=3.2"]
+
+[project.scripts]
+shujuan = "shujuan.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["shujuan*"]
+
+[tool.setuptools.package-data]
+shujuan = [
+  "migrations/shujuan/*.sql",
+  "migrations/shujuan/README.md",
+  "assets/AGENTS.md",
+  "assets/hooks.json",
+  "assets/skills/*/SKILL.md",
+  "assets/skills/*/references/*.md",
+  "assets/skills/*/templates/*.md",
+  "assets/agents/*.toml",
+  "assets/hooks/*.py",
+]

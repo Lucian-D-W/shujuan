@@ -1,0 +1,2155 @@
+{
+  "declares_no_closure": true,
+  "closed_by_decomposition": false,
+  "endpoint": {
+    "name": "shujuan-v11-method-plane-2026-06-26"
+  },
+  "source_plan": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md",
+  "controller_decision": "Full v11 method-plane design decomposition. Covers every named task/point from the source plan while separating current v11.0 active work, future v11.1 cleanup, explicit non-goals, and deferred stop-hook exploration. Decomposition does not close any task/check. Revision 1 split broad checks C09/C20/C35 and moved T10 impact delegation to a pre-edit P0 gate after reviewer feedback.",
+  "tasks": [
+    {
+      "key": "T13_CONTROLLER_REVIEW_GATE",
+      "title": "Controller task-chain review gate",
+      "body": "Obtain three independent gpt-5.4 high reviewer passes on the full task-chain decomposition before implementation starts.",
+      "phase": "P0",
+      "order": 5,
+      "mandatory": true,
+      "source_refs": [
+        "S64_CONTROLLER_REVIEW_GATE"
+      ]
+    },
+    {
+      "key": "T01_BASELINE",
+      "title": "Fix v11 baseline and regression evidence",
+      "body": "Capture the current route/role/schema/package baseline and lock the two report-identified v10 defects as failing regressions before repair.",
+      "phase": "P0",
+      "order": 10,
+      "mandatory": true,
+      "source_refs": [
+        "S00_EVIDENCE_LABELS",
+        "S02_DIRECTION_SUPPORT",
+        "S07_ROUTE_NEGATED_REVIEW_BUG",
+        "S08_ROLE_FALLBACK_BUG",
+        "S18_NO_DB_EXPANSION",
+        "S44_PHASE_P0_BASELINE",
+        "S59_COMPLETE_DELIVERABLES",
+        "S61_EVIDENCE_INDEX"
+      ]
+    },
+    {
+      "key": "T02_ROUTE_ROLE_REPAIR",
+      "title": "Repair route intent and role normalization",
+      "body": "Implement negation-aware route intent facts and role alias/fail-closed policy without changing the v10 fact-plane schema.",
+      "phase": "P1",
+      "order": 20,
+      "mandatory": true,
+      "source_refs": [
+        "S07_ROUTE_NEGATED_REVIEW_BUG",
+        "S08_ROLE_FALLBACK_BUG",
+        "S41_FIX_A_ROUTE",
+        "S42_FIX_B_ROLE",
+        "S45_PHASE_P1_POLICY",
+        "S53_ACCEPT_ROLE_AUTHORITY",
+        "S59_COMPLETE_DELIVERABLES"
+      ]
+    },
+    {
+      "key": "T03_METHOD_POLICY",
+      "title": "Add typed method policy and route method contract",
+      "body": "Add a shared method policy service and expose recommended_skill/method_contract through route guard and pure classification paths.",
+      "phase": "P1",
+      "order": 30,
+      "mandatory": true,
+      "source_refs": [
+        "S06_METHOD_CONTRACT_GAP",
+        "S11_FORMAL_PROBLEM",
+        "S13_V10_GATES",
+        "S21_FIVE_PLANES",
+        "S28_METHOD_POLICY_SPEC",
+        "S37_HARNESS_MANUAL",
+        "S45_PHASE_P1_POLICY",
+        "S59_COMPLETE_DELIVERABLES"
+      ]
+    },
+    {
+      "key": "T04_SKILL_SURFACE",
+      "title": "Contract AGENTS and land seven method Skills",
+      "body": "Shrink the always-on policy surface and add shujuan-harness, recall, capture, execute, delegate, close, evolve plus a compatibility core shim.",
+      "phase": "P2",
+      "order": 40,
+      "mandatory": true,
+      "source_refs": [
+        "S04_AGENTS_SKILL_LAYERING_PROBLEM",
+        "S05_WIDE_CORE_COLLISION",
+        "S13_V10_GATES",
+        "S14_AGENTS_POLICY_PLANE",
+        "S15_SKILL_METHOD_PLANE",
+        "S21_FIVE_PLANES",
+        "S22_NO_CORE_ROUTER",
+        "S23_SEVEN_SKILLS",
+        "S24_AGENT_STOP_BOUNDARY",
+        "S26_DIRECTORY_SIZE_TARGETS",
+        "S27_AGENTS_NEW_BOUNDARY",
+        "S29_SKILL_HARNESS",
+        "S30_SKILL_RECALL",
+        "S31_SKILL_CAPTURE",
+        "S32_SKILL_EXECUTE",
+        "S33_SKILL_DELEGATE",
+        "S34_SKILL_CLOSE",
+        "S35_SKILL_EVOLVE",
+        "S36_RECALL_MANUAL",
+        "S37_HARNESS_MANUAL",
+        "S38_ATTENTION_CONTRACT",
+        "S46_PHASE_P2_SKILLS",
+        "S50_ACCEPT_CODEX_SURFACE",
+        "S55_V11_COMPAT",
+        "S59_COMPLETE_DELIVERABLES",
+        "S60_TERMS"
+      ]
+    },
+    {
+      "key": "T05_ROLE_PLANE",
+      "title": "Add role profiles and delegation material boundaries",
+      "body": "Introduce project-scoped controller/worker/reviewer/researcher/writer role profiles and make delegate packets method/role specific.",
+      "phase": "P3",
+      "order": 50,
+      "mandatory": true,
+      "source_refs": [
+        "S16_ROLE_PLANE",
+        "S21_FIVE_PLANES",
+        "S39_ROLE_PROFILES",
+        "S47_PHASE_P3_PACKAGE_ROLE",
+        "S53_ACCEPT_ROLE_AUTHORITY",
+        "S59_COMPLETE_DELIVERABLES"
+      ]
+    },
+    {
+      "key": "T06_INSTALL_PACKAGING",
+      "title": "Registry-driven skill and agent installation",
+      "body": "Replace single-core install/package assumptions with a registry-driven installer, doctor, package data, manifest, README and clean init smoke.",
+      "phase": "P3",
+      "order": 60,
+      "mandatory": true,
+      "source_refs": [
+        "S21_FIVE_PLANES",
+        "S23_SEVEN_SKILLS",
+        "S26_DIRECTORY_SIZE_TARGETS",
+        "S29_SKILL_HARNESS",
+        "S30_SKILL_RECALL",
+        "S31_SKILL_CAPTURE",
+        "S32_SKILL_EXECUTE",
+        "S33_SKILL_DELEGATE",
+        "S34_SKILL_CLOSE",
+        "S35_SKILL_EVOLVE",
+        "S43_PACKAGE_HARDCODE",
+        "S47_PHASE_P3_PACKAGE_ROLE",
+        "S50_ACCEPT_CODEX_SURFACE",
+        "S54_ACCEPT_RUNTIME_RELEASE",
+        "S55_V11_COMPAT",
+        "S58_RISKS",
+        "S59_COMPLETE_DELIVERABLES"
+      ]
+    },
+    {
+      "key": "T07_HOOKS",
+      "title": "Add optional trusted hooks with CLI fallback",
+      "body": "Add pure method-hint and common pretool guard hooks while proving core correctness when hooks are disabled or untrusted.",
+      "phase": "P4",
+      "order": 70,
+      "mandatory": true,
+      "source_refs": [
+        "S17_HOOK_BOUNDARY",
+        "S40_HOOK_SCHEME",
+        "S48_PHASE_P4_HOOKS",
+        "S59_COMPLETE_DELIVERABLES"
+      ]
+    },
+    {
+      "key": "T08_RECALL_BENCH",
+      "title": "Build Recall method benchmark and stop contract",
+      "body": "Create 12 Recall benchmarks, claim/frontier/stop templates, and metrics proving source-anchored targeted recall with no DB writes.",
+      "phase": "P5",
+      "order": 80,
+      "mandatory": true,
+      "source_refs": [
+        "S10_RECALL_EXPERIMENT",
+        "S20_BERRYPICKING_RECALL",
+        "S24_AGENT_STOP_BOUNDARY",
+        "S36_RECALL_MANUAL",
+        "S44_PHASE_P0_BASELINE",
+        "S49_PHASE_P5_DOGFOOD",
+        "S52_ACCEPT_RECALL",
+        "S58_RISKS",
+        "S59_COMPLETE_DELIVERABLES",
+        "S60_TERMS"
+      ]
+    },
+    {
+      "key": "T09_ROUTE_METHOD_EVAL",
+      "title": "Build 72-prompt route and method eval matrix",
+      "body": "Create bilingual route/method collision, negation, No Governance, Delegate and Close input tests with target metrics.",
+      "phase": "P5",
+      "order": 90,
+      "mandatory": true,
+      "source_refs": [
+        "S41_FIX_A_ROUTE",
+        "S44_PHASE_P0_BASELINE",
+        "S49_PHASE_P5_DOGFOOD",
+        "S51_ACCEPT_ROUTE_METHOD",
+        "S58_RISKS",
+        "S59_COMPLETE_DELIVERABLES"
+      ]
+    },
+    {
+      "key": "T10_IMPACT_DELEGATION",
+      "title": "Require codegraph impact workflow for implementation",
+      "body": "Pre-edit gate: require the 5.5 medium worker packet to run codegraph/GitNexus impact analysis before any code modification, and preserve provider output as material until controller adoption.",
+      "phase": "P0",
+      "order": 15,
+      "mandatory": true,
+      "source_refs": [
+        "S65_WORKER_MODEL_CODEGRAPH"
+      ]
+    },
+    {
+      "key": "T11_DOGFOOD_CLOSEOUT",
+      "title": "Run live PostgreSQL dogfood and controller closeout",
+      "body": "Run live migration/schema/status, Execute/Delegate/Close end-to-end, evidence verify, strict doctor, and independent reviewer adoption.",
+      "phase": "P5",
+      "order": 110,
+      "mandatory": true,
+      "source_refs": [
+        "S09_RELEASE_LIMITS",
+        "S18_NO_DB_EXPANSION",
+        "S19_REPORT_USE_BOUNDARY",
+        "S21_FIVE_PLANES",
+        "S49_PHASE_P5_DOGFOOD",
+        "S54_ACCEPT_RUNTIME_RELEASE",
+        "S59_COMPLETE_DELIVERABLES",
+        "S61_EVIDENCE_INDEX"
+      ]
+    },
+    {
+      "key": "T12_DOCS_RELEASE",
+      "title": "Write v11 migration, glossary, risk and rollback docs",
+      "body": "Publish migration notes, terminology, risk controls, rollback rules, and release evidence so v11 is not just code plus Skills.",
+      "phase": "P5",
+      "order": 120,
+      "mandatory": true,
+      "source_refs": [
+        "S01_CORE_DEFINITION",
+        "S03_HISTORY_MAINLINE",
+        "S12_HISTORY_PRINCIPLES",
+        "S21_FIVE_PLANES",
+        "S25_ARCHITECTURE_DIAGRAM",
+        "S55_V11_COMPAT",
+        "S57_ROLLBACK",
+        "S58_RISKS",
+        "S59_COMPLETE_DELIVERABLES",
+        "S60_TERMS"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "key": "C04_TASK_CHAIN_REVIEWERS",
+      "task_key": "T13_CONTROLLER_REVIEW_GATE",
+      "body": "Three gpt-5.4 high reviewer returns independently accept that the imported task chain follows the source plan without unintentional upgrade, downgrade, compression, or closure claim.",
+      "expected_evidence_type": "artifact",
+      "source_refs": [
+        "S64_CONTROLLER_REVIEW_GATE"
+      ]
+    },
+    {
+      "key": "C01_BASELINE_SCHEMA",
+      "task_key": "T01_BASELINE",
+      "body": "Record current schema/runtime/installation baseline: PostgreSQL ready, schema current, 38 physical tables, 47 role registry entries, 9 contracted legacy tables absent, current AGENTS/SKILL/package hardcoded-core state.",
+      "expected_evidence_type": "artifact",
+      "source_refs": [
+        "S00_EVIDENCE_LABELS",
+        "S02_DIRECTION_SUPPORT",
+        "S18_NO_DB_EXPANSION",
+        "S44_PHASE_P0_BASELINE",
+        "S61_EVIDENCE_INDEX"
+      ]
+    },
+    {
+      "key": "C02_ROUTE_DEFECT_FIXTURE",
+      "task_key": "T01_BASELINE",
+      "body": "Add regression fixtures proving independent-review plus negated close currently misroutes to Close, in Chinese and English, before repair.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S07_ROUTE_NEGATED_REVIEW_BUG",
+        "S44_PHASE_P0_BASELINE"
+      ]
+    },
+    {
+      "key": "C03_ROLE_DEFECT_FIXTURE",
+      "task_key": "T01_BASELINE",
+      "body": "Add regression fixture proving --role controller currently falls back to worker authority while --role controller_agent is correct.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S08_ROLE_FALLBACK_BUG",
+        "S44_PHASE_P0_BASELINE"
+      ]
+    },
+    {
+      "key": "C05_ROUTE_TYPED_FACTS",
+      "task_key": "T02_ROUTE_ROLE_REPAIR",
+      "body": "Route intent parsing exposes typed facts including asks_recall, asks_review, asks_close, negates_close, and asks_execute.",
+      "expected_evidence_type": "change_set",
+      "source_refs": [
+        "S07_ROUTE_NEGATED_REVIEW_BUG",
+        "S41_FIX_A_ROUTE",
+        "S45_PHASE_P1_POLICY"
+      ]
+    },
+    {
+      "key": "C06_NEGATED_CLOSE_DELEGATE",
+      "task_key": "T02_ROUTE_ROLE_REPAIR",
+      "body": "Independent review with do-not-close / 不要关闭 routes to Delegate unless explicit complete closeout inputs are present; complete closeout inputs still route to Close.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S07_ROUTE_NEGATED_REVIEW_BUG",
+        "S41_FIX_A_ROUTE"
+      ]
+    },
+    {
+      "key": "C07_ROLE_POLICY_ALIAS",
+      "task_key": "T02_ROUTE_ROLE_REPAIR",
+      "body": "role_policy normalizes controller/worker/reviewer/researcher/writer aliases to *_agent and unknown roles fail closed with structured invalid_role.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S08_ROLE_FALLBACK_BUG",
+        "S42_FIX_B_ROLE",
+        "S45_PHASE_P1_POLICY",
+        "S53_ACCEPT_ROLE_AUTHORITY"
+      ]
+    },
+    {
+      "key": "C08_METHOD_CONTRACT_SERVICE",
+      "task_key": "T03_METHOD_POLICY",
+      "body": "method_policy defines MethodContract with skill_name, routes, write_posture, allowed_roles, first_surface_kind, completion_rule, required_output_fields, and allowed_transitions.",
+      "expected_evidence_type": "change_set",
+      "source_refs": [
+        "S06_METHOD_CONTRACT_GAP",
+        "S11_FORMAL_PROBLEM",
+        "S21_FIVE_PLANES",
+        "S28_METHOD_POLICY_SPEC",
+        "S45_PHASE_P1_POLICY"
+      ]
+    },
+    {
+      "key": "C09_ROUTE_METHOD_OUTPUT",
+      "task_key": "T03_METHOD_POLICY",
+      "body": "route guard outputs recommended_skill, method_version, method_contract, and parsed intent facts for method selection.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S06_METHOD_CONTRACT_GAP",
+        "S11_FORMAL_PROBLEM",
+        "S13_V10_GATES",
+        "S28_METHOD_POLICY_SPEC",
+        "S37_HARNESS_MANUAL",
+        "S45_PHASE_P1_POLICY"
+      ]
+    },
+    {
+      "key": "C10_NO_GOVERNANCE_SIDE_EFFECTS",
+      "task_key": "T03_METHOD_POLICY",
+      "body": "No Governance directive has zero DB/trace/filesystem side effects and does not become a sixth route; No Governance meta-topic remains Recall.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S45_PHASE_P1_POLICY"
+      ]
+    },
+    {
+      "key": "C11_AGENTS_CONTRACTED",
+      "task_key": "T04_SKILL_SURFACE",
+      "body": "Root AGENTS is contracted to <=8 KiB and <=120 lines, with four gates, No Governance, PostgreSQL, material/closure, and skill map in the first 4 KiB.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S04_AGENTS_SKILL_LAYERING_PROBLEM",
+        "S13_V10_GATES",
+        "S14_AGENTS_POLICY_PLANE",
+        "S21_FIVE_PLANES",
+        "S26_DIRECTORY_SIZE_TARGETS",
+        "S27_AGENTS_NEW_BOUNDARY",
+        "S46_PHASE_P2_SKILLS",
+        "S50_ACCEPT_CODEX_SURFACE"
+      ]
+    },
+    {
+      "key": "C12_SEVEN_SKILLS",
+      "task_key": "T04_SKILL_SURFACE",
+      "body": "Seven method Skills exist with should/should-not trigger, first surface, action chain, completion contract, stop/escalation rule, and short descriptions totaling <=2.5 KiB.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S05_WIDE_CORE_COLLISION",
+        "S15_SKILL_METHOD_PLANE",
+        "S23_SEVEN_SKILLS",
+        "S26_DIRECTORY_SIZE_TARGETS",
+        "S29_SKILL_HARNESS",
+        "S30_SKILL_RECALL",
+        "S31_SKILL_CAPTURE",
+        "S32_SKILL_EXECUTE",
+        "S33_SKILL_DELEGATE",
+        "S34_SKILL_CLOSE",
+        "S35_SKILL_EVOLVE",
+        "S37_HARNESS_MANUAL",
+        "S46_PHASE_P2_SKILLS",
+        "S50_ACCEPT_CODEX_SURFACE"
+      ]
+    },
+    {
+      "key": "C13_CORE_SHIM",
+      "task_key": "T04_SKILL_SURFACE",
+      "body": "shujuan-core becomes an explicit v10 migration compatibility shim and does not implicitly claim ordinary task routing or authority.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S05_WIDE_CORE_COLLISION",
+        "S15_SKILL_METHOD_PLANE",
+        "S22_NO_CORE_ROUTER",
+        "S46_PHASE_P2_SKILLS",
+        "S50_ACCEPT_CODEX_SURFACE",
+        "S55_V11_COMPAT"
+      ]
+    },
+    {
+      "key": "C14_ATTENTION_RECALL_TEMPLATES",
+      "task_key": "T04_SKILL_SURFACE",
+      "body": "Attention Contract, Claim Ledger, Recall Frontier, and Recall Stop Decision templates are present in method references/templates.",
+      "expected_evidence_type": "artifact",
+      "source_refs": [
+        "S24_AGENT_STOP_BOUNDARY",
+        "S36_RECALL_MANUAL",
+        "S38_ATTENTION_CONTRACT",
+        "S46_PHASE_P2_SKILLS",
+        "S60_TERMS"
+      ]
+    },
+    {
+      "key": "C15_ROLE_TOML",
+      "task_key": "T05_ROLE_PLANE",
+      "body": "Five project-scoped role profiles exist for controller, worker, reviewer, researcher, and writer with model/sandbox/instruction boundaries.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S16_ROLE_PLANE",
+        "S21_FIVE_PLANES",
+        "S39_ROLE_PROFILES",
+        "S47_PHASE_P3_PACKAGE_ROLE"
+      ]
+    },
+    {
+      "key": "C16_DELEGATE_METHOD_SPECIFIC",
+      "task_key": "T05_ROLE_PLANE",
+      "body": "delegate packets choose method-specific must_read surfaces and preserve reviewer/worker/provider material-only boundaries until controller adoption.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S16_ROLE_PLANE",
+        "S39_ROLE_PROFILES"
+      ]
+    },
+    {
+      "key": "C17_REVIEWER_READONLY",
+      "task_key": "T05_ROLE_PLANE",
+      "body": "Reviewer role defaults to read-only review and cannot close checks/tasks; Skill activation does not change role authority.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S16_ROLE_PLANE",
+        "S39_ROLE_PROFILES",
+        "S53_ACCEPT_ROLE_AUTHORITY"
+      ]
+    },
+    {
+      "key": "C18_SKILL_REGISTRY",
+      "task_key": "T06_INSTALL_PACKAGING",
+      "body": "A skill/agent registry lists required and optional Skills, descriptions, versions, asset paths, and compatibility status.",
+      "expected_evidence_type": "change_set",
+      "source_refs": [
+        "S21_FIVE_PLANES",
+        "S23_SEVEN_SKILLS",
+        "S29_SKILL_HARNESS",
+        "S30_SKILL_RECALL",
+        "S31_SKILL_CAPTURE",
+        "S32_SKILL_EXECUTE",
+        "S33_SKILL_DELEGATE",
+        "S34_SKILL_CLOSE",
+        "S35_SKILL_EVOLVE",
+        "S43_PACKAGE_HARDCODE",
+        "S47_PHASE_P3_PACKAGE_ROLE"
+      ]
+    },
+    {
+      "key": "C19_INSTALL_SKILLS",
+      "task_key": "T06_INSTALL_PACKAGING",
+      "body": "init --install-skills installs all required Skills and role profiles; --install-skill remains a one-version compatibility alias with deprecation warning.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S43_PACKAGE_HARDCODE",
+        "S47_PHASE_P3_PACKAGE_ROLE",
+        "S55_V11_COMPAT"
+      ]
+    },
+    {
+      "key": "C20_INSTALL_DOCTOR_PACKAGE",
+      "task_key": "T06_INSTALL_PACKAGING",
+      "body": "install-layout doctor reports every required Skill/agent with present/hash/version/metadata status.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S23_SEVEN_SKILLS",
+        "S26_DIRECTORY_SIZE_TARGETS",
+        "S43_PACKAGE_HARDCODE",
+        "S47_PHASE_P3_PACKAGE_ROLE",
+        "S50_ACCEPT_CODEX_SURFACE",
+        "S54_ACCEPT_RUNTIME_RELEASE",
+        "S58_RISKS"
+      ]
+    },
+    {
+      "key": "C21_HOOK_METHOD_HINT",
+      "task_key": "T07_HOOKS",
+      "body": "Optional UserPromptSubmit method hint hook calls only pure classification and adds context without DB or filesystem side effects.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S17_HOOK_BOUNDARY",
+        "S40_HOOK_SCHEME",
+        "S48_PHASE_P4_HOOKS"
+      ]
+    },
+    {
+      "key": "C22_HOOK_PRETOOL_GUARD",
+      "task_key": "T07_HOOKS",
+      "body": "Optional PreToolUse common guard catches common shujuan write/close/authority mistakes while documented as non-authoritative.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S17_HOOK_BOUNDARY",
+        "S40_HOOK_SCHEME",
+        "S48_PHASE_P4_HOOKS"
+      ]
+    },
+    {
+      "key": "C23_HOOK_DISABLED_FALLBACK",
+      "task_key": "T07_HOOKS",
+      "body": "All core route, role, No Governance and closeout tests still pass when hooks are disabled or untrusted.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S17_HOOK_BOUNDARY",
+        "S40_HOOK_SCHEME",
+        "S48_PHASE_P4_HOOKS"
+      ]
+    },
+    {
+      "key": "C24_RECALL_BENCHMARK_SET",
+      "task_key": "T08_RECALL_BENCH",
+      "body": "Twelve Recall benchmarks cover phase history/principles, code why, cross-endpoint lineage, report-vs-code contradictions, and current-vs-historical state.",
+      "expected_evidence_type": "artifact",
+      "source_refs": [
+        "S10_RECALL_EXPERIMENT",
+        "S20_BERRYPICKING_RECALL",
+        "S36_RECALL_MANUAL",
+        "S44_PHASE_P0_BASELINE",
+        "S52_ACCEPT_RECALL"
+      ]
+    },
+    {
+      "key": "C25_RECALL_METRICS",
+      "task_key": "T08_RECALL_BENCH",
+      "body": "Recall benchmark enforces 100% core claim anchors, 0 unsupported factual assertions, 100% report-evidence labeling, >=70% median candidate reduction for non-exhaustive tasks, stop reason and frontier, and zero DB writes.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S10_RECALL_EXPERIMENT",
+        "S20_BERRYPICKING_RECALL",
+        "S24_AGENT_STOP_BOUNDARY",
+        "S36_RECALL_MANUAL",
+        "S49_PHASE_P5_DOGFOOD",
+        "S52_ACCEPT_RECALL",
+        "S58_RISKS"
+      ]
+    },
+    {
+      "key": "C26_ROUTE_PROMPTS",
+      "task_key": "T09_ROUTE_METHOD_EVAL",
+      "body": "Seventy-two route/method prompts exist: seven Skills x six positives, eighteen overlaps/negations, and twelve bilingual No Governance directive/meta-topic boundaries.",
+      "expected_evidence_type": "artifact",
+      "source_refs": [
+        "S44_PHASE_P0_BASELINE",
+        "S51_ACCEPT_ROUTE_METHOD"
+      ]
+    },
+    {
+      "key": "C27_ROUTE_METRICS",
+      "task_key": "T09_ROUTE_METHOD_EVAL",
+      "body": "Route/method eval meets >=95% primary Skill top-1, No Governance directive false negative zero, meta-topic false positive zero, controller-only dangerous false allow zero, and both v11 report route defects fixed.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S41_FIX_A_ROUTE",
+        "S49_PHASE_P5_DOGFOOD",
+        "S51_ACCEPT_ROUTE_METHOD",
+        "S58_RISKS"
+      ]
+    },
+    {
+      "key": "C28_CODEGRAPH_BEFORE_EDITS",
+      "task_key": "T10_IMPACT_DELEGATION",
+      "body": "The 5.5 medium worker packet explicitly requires codegraph first and GitNexus escalation when results are sparse, high-risk, or cross-boundary before modifying code.",
+      "expected_evidence_type": "artifact",
+      "source_refs": [
+        "S65_WORKER_MODEL_CODEGRAPH"
+      ]
+    },
+    {
+      "key": "C29_IMPACT_MATERIAL_BOUNDARY",
+      "task_key": "T10_IMPACT_DELEGATION",
+      "body": "codegraph/GitNexus/provider reports are recorded as material/provider facts or hypotheses and cannot close checks without controller adoption and matching evidence.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S65_WORKER_MODEL_CODEGRAPH"
+      ]
+    },
+    {
+      "key": "C30_LIVE_RUNTIME_STATUS",
+      "task_key": "T11_DOGFOOD_CLOSEOUT",
+      "body": "Live PostgreSQL migration/status/schema roles pass; SQLite remains fail-closed; static schema remains 38 tables/47 roles with no P0 migration.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S09_RELEASE_LIMITS",
+        "S18_NO_DB_EXPANSION",
+        "S21_FIVE_PLANES",
+        "S49_PHASE_P5_DOGFOOD",
+        "S54_ACCEPT_RUNTIME_RELEASE"
+      ]
+    },
+    {
+      "key": "C31_E2E_EXECUTE_DELEGATE_CLOSE",
+      "task_key": "T11_DOGFOOD_CLOSEOUT",
+      "body": "Execute/Delegate/Close end-to-end proves workflow begin, exec start/stop, reviewer material import/adoption, evidence verify, endpoint refresh, and strict doctor.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S49_PHASE_P5_DOGFOOD"
+      ]
+    },
+    {
+      "key": "C32_TWO_REVIEWER_ADOPTIONS",
+      "task_key": "T11_DOGFOOD_CLOSEOUT",
+      "body": "Two independent reviewer returns are imported/adopted by controller before final closeout, with sufficiency/risk/missing-input notes preserved.",
+      "expected_evidence_type": "artifact",
+      "source_refs": [
+        "S49_PHASE_P5_DOGFOOD"
+      ]
+    },
+    {
+      "key": "C33_MIGRATION_NOTE",
+      "task_key": "T12_DOCS_RELEASE",
+      "body": "v10-to-v11 migration note explains AGENTS contraction, seven Skills, core shim compatibility, role profiles, installer changes, and DB no-migration posture.",
+      "expected_evidence_type": "artifact",
+      "source_refs": [
+        "S01_CORE_DEFINITION",
+        "S03_HISTORY_MAINLINE",
+        "S12_HISTORY_PRINCIPLES",
+        "S21_FIVE_PLANES",
+        "S25_ARCHITECTURE_DIAGRAM",
+        "S55_V11_COMPAT",
+        "S60_TERMS"
+      ]
+    },
+    {
+      "key": "C34_GLOSSARY_RISK_ROLLBACK",
+      "task_key": "T12_DOCS_RELEASE",
+      "body": "Glossary, risk matrix, v11.0/v11.1 compatibility, and rollback rules are documented without claiming automatic DB rollback for material artifacts.",
+      "expected_evidence_type": "artifact",
+      "source_refs": [
+        "S12_HISTORY_PRINCIPLES",
+        "S57_ROLLBACK",
+        "S58_RISKS",
+        "S60_TERMS"
+      ]
+    },
+    {
+      "key": "C35_RELEASE_EVIDENCE",
+      "task_key": "T12_DOCS_RELEASE",
+      "body": "Release command suite passes manifest verifier, compileall, focused tests, clean init/package install, and live PostgreSQL checks.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S09_RELEASE_LIMITS",
+        "S19_REPORT_USE_BOUNDARY",
+        "S54_ACCEPT_RUNTIME_RELEASE",
+        "S59_COMPLETE_DELIVERABLES",
+        "S61_EVIDENCE_INDEX"
+      ]
+    },
+    {
+      "key": "C09B_ROUTE_PURE_NO_SIDE_EFFECTS",
+      "task_key": "T03_METHOD_POLICY",
+      "body": "Pure route classification path does not connect to DB, create trace, or write filesystem state.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S06_METHOD_CONTRACT_GAP",
+        "S11_FORMAL_PROBLEM",
+        "S13_V10_GATES",
+        "S28_METHOD_POLICY_SPEC",
+        "S37_HARNESS_MANUAL",
+        "S45_PHASE_P1_POLICY"
+      ]
+    },
+    {
+      "key": "C20B_PACKAGE_MANIFEST_README_CHANGESET",
+      "task_key": "T06_INSTALL_PACKAGING",
+      "body": "package-data, MANIFEST/verifier, README, and install documentation are updated for registry-driven Skills and role profiles.",
+      "expected_evidence_type": "change_set",
+      "source_refs": [
+        "S43_PACKAGE_HARDCODE",
+        "S47_PHASE_P3_PACKAGE_ROLE",
+        "S50_ACCEPT_CODEX_SURFACE",
+        "S54_ACCEPT_RUNTIME_RELEASE",
+        "S55_V11_COMPAT",
+        "S58_RISKS"
+      ]
+    },
+    {
+      "key": "C20C_ASSET_SYNC_CLEAN_INIT",
+      "task_key": "T06_INSTALL_PACKAGING",
+      "body": ".agents/skills, shujuan/assets/skills, role profile assets, and clean repo init smoke prove installed surfaces are synchronized.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S23_SEVEN_SKILLS",
+        "S26_DIRECTORY_SIZE_TARGETS",
+        "S43_PACKAGE_HARDCODE",
+        "S47_PHASE_P3_PACKAGE_ROLE",
+        "S50_ACCEPT_CODEX_SURFACE",
+        "S54_ACCEPT_RUNTIME_RELEASE",
+        "S58_RISKS"
+      ]
+    },
+    {
+      "key": "C35B_CLOSEOUT_GATES",
+      "task_key": "T12_DOCS_RELEASE",
+      "body": "Final closeout evidence verify and strict doctor pass after matching evidence is imported.",
+      "expected_evidence_type": "test_result",
+      "source_refs": [
+        "S09_RELEASE_LIMITS",
+        "S19_REPORT_USE_BOUNDARY",
+        "S54_ACCEPT_RUNTIME_RELEASE",
+        "S59_COMPLETE_DELIVERABLES",
+        "S61_EVIDENCE_INDEX"
+      ]
+    },
+    {
+      "key": "C35C_FINAL_ENDPOINT_REPORT",
+      "task_key": "T12_DOCS_RELEASE",
+      "body": "Final endpoint active report artifact shows no active obligations after controller evidence adoption and refresh.",
+      "expected_evidence_type": "artifact",
+      "source_refs": [
+        "S09_RELEASE_LIMITS",
+        "S19_REPORT_USE_BOUNDARY",
+        "S54_ACCEPT_RUNTIME_RELEASE",
+        "S59_COMPLETE_DELIVERABLES",
+        "S61_EVIDENCE_INDEX"
+      ]
+    }
+  ],
+  "source_items": [
+    {
+      "id": "S00_EVIDENCE_LABELS",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#0",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T01_BASELINE"
+      },
+      "task_ids": [
+        "T01_BASELINE"
+      ],
+      "check_ids": [
+        "C01_BASELINE_SCHEMA"
+      ],
+      "rationale": "The plan requires F/R/I/D evidence labeling and no report-only factual substitution; baseline evidence must record what is directly observed.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S00_EVIDENCE_LABELS with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S01_CORE_DEFINITION",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#0",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T12_DOCS_RELEASE"
+      },
+      "task_ids": [
+        "T12_DOCS_RELEASE"
+      ],
+      "check_ids": [
+        "C33_MIGRATION_NOTE"
+      ],
+      "rationale": "The v11 definition must be carried into migration/release docs: v10 ontology plus method plane, roles, enforcement and attention/stop contracts.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S01_CORE_DEFINITION with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S02_DIRECTION_SUPPORT",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#1.1",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T01_BASELINE"
+      },
+      "task_ids": [
+        "T01_BASELINE"
+      ],
+      "check_ids": [
+        "C01_BASELINE_SCHEMA"
+      ],
+      "rationale": "The plan's first factual premise is that CLI/schema/skill surfaces support method work without new business tables.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S02_DIRECTION_SUPPORT with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S03_HISTORY_MAINLINE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#1.2",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T12_DOCS_RELEASE"
+      },
+      "task_ids": [
+        "T12_DOCS_RELEASE"
+      ],
+      "check_ids": [
+        "C33_MIGRATION_NOTE"
+      ],
+      "rationale": "The v1-v10 lineage must be preserved and documented as the boundary for v11 evolution.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S03_HISTORY_MAINLINE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S04_AGENTS_SKILL_LAYERING_PROBLEM",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#1.3.1",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE"
+      ],
+      "check_ids": [
+        "C11_AGENTS_CONTRACTED"
+      ],
+      "rationale": "AGENTS/Skill/runtime responsibility mixing is a direct driver of AGENTS contraction and method-skill split.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S04_AGENTS_SKILL_LAYERING_PROBLEM with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S05_WIDE_CORE_COLLISION",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#1.3.2",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE"
+      ],
+      "check_ids": [
+        "C12_SEVEN_SKILLS",
+        "C13_CORE_SHIM"
+      ],
+      "rationale": "The wide shujuan-core description collision must be corrected by seven narrow method Skills and a shim.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S05_WIDE_CORE_COLLISION with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S06_METHOD_CONTRACT_GAP",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#1.3.3",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T03_METHOD_POLICY"
+      },
+      "task_ids": [
+        "T03_METHOD_POLICY"
+      ],
+      "check_ids": [
+        "C08_METHOD_CONTRACT_SERVICE",
+        "C09_ROUTE_METHOD_OUTPUT",
+        "C09B_ROUTE_PURE_NO_SIDE_EFFECTS"
+      ],
+      "rationale": "The missing unified machine contract maps directly to method_policy and route guard contract output.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S06_METHOD_CONTRACT_GAP with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S07_ROUTE_NEGATED_REVIEW_BUG",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#1.3.4",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T02_ROUTE_ROLE_REPAIR"
+      },
+      "task_ids": [
+        "T01_BASELINE",
+        "T02_ROUTE_ROLE_REPAIR"
+      ],
+      "check_ids": [
+        "C02_ROUTE_DEFECT_FIXTURE",
+        "C05_ROUTE_TYPED_FACTS",
+        "C06_NEGATED_CLOSE_DELEGATE"
+      ],
+      "rationale": "The Chinese/English independent review plus negated close defect must be fixed and regression-tested.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S07_ROUTE_NEGATED_REVIEW_BUG with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S08_ROLE_FALLBACK_BUG",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#1.3.5",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T02_ROUTE_ROLE_REPAIR"
+      },
+      "task_ids": [
+        "T01_BASELINE",
+        "T02_ROUTE_ROLE_REPAIR"
+      ],
+      "check_ids": [
+        "C03_ROLE_DEFECT_FIXTURE",
+        "C07_ROLE_POLICY_ALIAS"
+      ],
+      "rationale": "The controller alias fallback bug must be fixed and regression-tested.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S08_ROLE_FALLBACK_BUG with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S09_RELEASE_LIMITS",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#1.3.6",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T11_DOGFOOD_CLOSEOUT"
+      },
+      "task_ids": [
+        "T11_DOGFOOD_CLOSEOUT"
+      ],
+      "check_ids": [
+        "C30_LIVE_RUNTIME_STATUS",
+        "C35_RELEASE_EVIDENCE",
+        "C35B_CLOSEOUT_GATES",
+        "C35C_FINAL_ENDPOINT_REPORT"
+      ],
+      "rationale": "The plan warns release packages are not full closeout proof; v11 requires live PostgreSQL and release evidence.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S09_RELEASE_LIMITS with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S10_RECALL_EXPERIMENT",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#1.4",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T08_RECALL_BENCH"
+      },
+      "task_ids": [
+        "T08_RECALL_BENCH"
+      ],
+      "check_ids": [
+        "C24_RECALL_BENCHMARK_SET",
+        "C25_RECALL_METRICS"
+      ],
+      "rationale": "The 94.7% single Recall experiment becomes a benchmark requirement rather than a one-off claim.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S10_RECALL_EXPERIMENT with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S11_FORMAL_PROBLEM",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#1.5",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T03_METHOD_POLICY"
+      },
+      "task_ids": [
+        "T03_METHOD_POLICY"
+      ],
+      "check_ids": [
+        "C08_METHOD_CONTRACT_SERVICE",
+        "C09_ROUTE_METHOD_OUTPUT",
+        "C09B_ROUTE_PURE_NO_SIDE_EFFECTS"
+      ],
+      "rationale": "The formal problem statement is implemented through method/role/route contracts and safe first surfaces.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S11_FORMAL_PROBLEM with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S12_HISTORY_PRINCIPLES",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#2.1",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T12_DOCS_RELEASE"
+      },
+      "task_ids": [
+        "T12_DOCS_RELEASE"
+      ],
+      "check_ids": [
+        "C33_MIGRATION_NOTE",
+        "C34_GLOSSARY_RISK_ROLLBACK"
+      ],
+      "rationale": "Six historical principles must remain visible in release and migration notes.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S12_HISTORY_PRINCIPLES with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S13_V10_GATES",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#2.2",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T03_METHOD_POLICY",
+        "T04_SKILL_SURFACE"
+      ],
+      "check_ids": [
+        "C09_ROUTE_METHOD_OUTPUT",
+        "C11_AGENTS_CONTRACTED",
+        "C09B_ROUTE_PURE_NO_SIDE_EFFECTS"
+      ],
+      "rationale": "Sovereignty, Relation, Authority, Source Coverage stay in policy/CLI and are not duplicated as divergent Skill truth.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S13_V10_GATES with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S14_AGENTS_POLICY_PLANE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#2.3.1",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE"
+      ],
+      "check_ids": [
+        "C11_AGENTS_CONTRACTED"
+      ],
+      "rationale": "AGENTS is the always-on policy plane and must stay small.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S14_AGENTS_POLICY_PLANE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S15_SKILL_METHOD_PLANE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#2.3.2",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE"
+      ],
+      "check_ids": [
+        "C12_SEVEN_SKILLS",
+        "C13_CORE_SHIM"
+      ],
+      "rationale": "Skills are methods, not authority grants.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S15_SKILL_METHOD_PLANE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S16_ROLE_PLANE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#2.3.3",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T05_ROLE_PLANE"
+      },
+      "task_ids": [
+        "T05_ROLE_PLANE"
+      ],
+      "check_ids": [
+        "C15_ROLE_TOML",
+        "C16_DELEGATE_METHOD_SPECIFIC",
+        "C17_REVIEWER_READONLY"
+      ],
+      "rationale": "DCCP/custom agent role profiles are orthogonal to method Skills.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S16_ROLE_PLANE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S17_HOOK_BOUNDARY",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#2.3.4",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T07_HOOKS"
+      },
+      "task_ids": [
+        "T07_HOOKS"
+      ],
+      "check_ids": [
+        "C21_HOOK_METHOD_HINT",
+        "C22_HOOK_PRETOOL_GUARD",
+        "C23_HOOK_DISABLED_FALLBACK"
+      ],
+      "rationale": "Hooks may assist but command policy must still fail closed without them.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S17_HOOK_BOUNDARY with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S18_NO_DB_EXPANSION",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#2.4",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T11_DOGFOOD_CLOSEOUT"
+      },
+      "task_ids": [
+        "T01_BASELINE",
+        "T11_DOGFOOD_CLOSEOUT"
+      ],
+      "check_ids": [
+        "C01_BASELINE_SCHEMA",
+        "C30_LIVE_RUNTIME_STATUS"
+      ],
+      "rationale": "The method upgrade starts with no new business tables and preserves current schema roles.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S18_NO_DB_EXPANSION with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S19_REPORT_USE_BOUNDARY",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#2.5",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T11_DOGFOOD_CLOSEOUT"
+      },
+      "task_ids": [
+        "T11_DOGFOOD_CLOSEOUT"
+      ],
+      "check_ids": [
+        "C35_RELEASE_EVIDENCE",
+        "C35B_CLOSEOUT_GATES",
+        "C35C_FINAL_ENDPOINT_REPORT"
+      ],
+      "rationale": "Endpoint reports are closure claims to verify, not substitutes for live tests.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S19_REPORT_USE_BOUNDARY with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S20_BERRYPICKING_RECALL",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#3.1",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T08_RECALL_BENCH"
+      },
+      "task_ids": [
+        "T08_RECALL_BENCH"
+      ],
+      "check_ids": [
+        "C24_RECALL_BENCHMARK_SET",
+        "C25_RECALL_METRICS"
+      ],
+      "rationale": "Recall method must be dynamic frontier/claim-gap driven instead of a rigid checklist.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S20_BERRYPICKING_RECALL with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S21_FIVE_PLANES",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#3.2",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T12_DOCS_RELEASE"
+      },
+      "task_ids": [
+        "T03_METHOD_POLICY",
+        "T04_SKILL_SURFACE",
+        "T05_ROLE_PLANE",
+        "T06_INSTALL_PACKAGING",
+        "T11_DOGFOOD_CLOSEOUT",
+        "T12_DOCS_RELEASE"
+      ],
+      "check_ids": [
+        "C08_METHOD_CONTRACT_SERVICE",
+        "C11_AGENTS_CONTRACTED",
+        "C15_ROLE_TOML",
+        "C18_SKILL_REGISTRY",
+        "C30_LIVE_RUNTIME_STATUS",
+        "C33_MIGRATION_NOTE"
+      ],
+      "rationale": "Policy, Method, Role, Enforcement and Fact planes are the central architecture and must be represented across implementation and docs.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S21_FIVE_PLANES with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S22_NO_CORE_ROUTER",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#3.3",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE"
+      ],
+      "check_ids": [
+        "C13_CORE_SHIM"
+      ],
+      "rationale": "shujuan-core must not become a universal router Skill.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S22_NO_CORE_ROUTER with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S23_SEVEN_SKILLS",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#3.4",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE",
+        "T06_INSTALL_PACKAGING"
+      ],
+      "check_ids": [
+        "C12_SEVEN_SKILLS",
+        "C18_SKILL_REGISTRY",
+        "C20_INSTALL_DOCTOR_PACKAGE",
+        "C20C_ASSET_SYNC_CLEAN_INIT"
+      ],
+      "rationale": "Seven method Skills are defined by completion contracts, not command counts.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S23_SEVEN_SKILLS with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S24_AGENT_STOP_BOUNDARY",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#3.5",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T08_RECALL_BENCH"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE",
+        "T08_RECALL_BENCH"
+      ],
+      "check_ids": [
+        "C14_ATTENTION_RECALL_TEMPLATES",
+        "C25_RECALL_METRICS"
+      ],
+      "rationale": "Local agent stop freedom must be constrained by claim coverage, anchors, contradictions, frontier, and scope level.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S24_AGENT_STOP_BOUNDARY with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S25_ARCHITECTURE_DIAGRAM",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.1",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T12_DOCS_RELEASE"
+      },
+      "task_ids": [
+        "T12_DOCS_RELEASE"
+      ],
+      "check_ids": [
+        "C33_MIGRATION_NOTE"
+      ],
+      "rationale": "The implementation docs must preserve the overall flow from prompt to gates, method compiler, Skills, roles, hooks and PostgreSQL.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S25_ARCHITECTURE_DIAGRAM with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S26_DIRECTORY_SIZE_TARGETS",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.2",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE",
+        "T06_INSTALL_PACKAGING"
+      ],
+      "check_ids": [
+        "C11_AGENTS_CONTRACTED",
+        "C12_SEVEN_SKILLS",
+        "C20_INSTALL_DOCTOR_PACKAGE",
+        "C20C_ASSET_SYNC_CLEAN_INIT"
+      ],
+      "rationale": "Directory layout and size budgets define concrete Skill/asset/agent deliverables.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S26_DIRECTORY_SIZE_TARGETS with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S27_AGENTS_NEW_BOUNDARY",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.3",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE"
+      ],
+      "check_ids": [
+        "C11_AGENTS_CONTRACTED"
+      ],
+      "rationale": "AGENTS must keep gates/invariants/skill map and move handbooks/templates elsewhere.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S27_AGENTS_NEW_BOUNDARY with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S28_METHOD_POLICY_SPEC",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.4",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T03_METHOD_POLICY"
+      },
+      "task_ids": [
+        "T03_METHOD_POLICY"
+      ],
+      "check_ids": [
+        "C08_METHOD_CONTRACT_SERVICE",
+        "C09_ROUTE_METHOD_OUTPUT",
+        "C09B_ROUTE_PURE_NO_SIDE_EFFECTS"
+      ],
+      "rationale": "The MethodContract dataclass is a direct implementation requirement.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S28_METHOD_POLICY_SPEC with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S29_SKILL_HARNESS",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.5.1",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE",
+        "T06_INSTALL_PACKAGING"
+      ],
+      "check_ids": [
+        "C12_SEVEN_SKILLS",
+        "C18_SKILL_REGISTRY"
+      ],
+      "rationale": "The shujuan-harness Skill spec must be implemented with trigger, non-trigger, posture, first surface, completion and transitions.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S29_SKILL_HARNESS with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S30_SKILL_RECALL",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.5.2",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE",
+        "T06_INSTALL_PACKAGING"
+      ],
+      "check_ids": [
+        "C12_SEVEN_SKILLS",
+        "C18_SKILL_REGISTRY"
+      ],
+      "rationale": "The shujuan-recall Skill spec must be implemented with trigger, non-trigger, posture, first surface, completion and transitions.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S30_SKILL_RECALL with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S31_SKILL_CAPTURE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.5.3",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE",
+        "T06_INSTALL_PACKAGING"
+      ],
+      "check_ids": [
+        "C12_SEVEN_SKILLS",
+        "C18_SKILL_REGISTRY"
+      ],
+      "rationale": "The shujuan-capture Skill spec must be implemented with trigger, non-trigger, posture, first surface, completion and transitions.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S31_SKILL_CAPTURE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S32_SKILL_EXECUTE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.5.4",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE",
+        "T06_INSTALL_PACKAGING"
+      ],
+      "check_ids": [
+        "C12_SEVEN_SKILLS",
+        "C18_SKILL_REGISTRY"
+      ],
+      "rationale": "The shujuan-execute Skill spec must be implemented with trigger, non-trigger, posture, first surface, completion and transitions.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S32_SKILL_EXECUTE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S33_SKILL_DELEGATE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.5.5",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE",
+        "T06_INSTALL_PACKAGING"
+      ],
+      "check_ids": [
+        "C12_SEVEN_SKILLS",
+        "C18_SKILL_REGISTRY"
+      ],
+      "rationale": "The shujuan-delegate Skill spec must be implemented with trigger, non-trigger, posture, first surface, completion and transitions.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S33_SKILL_DELEGATE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S34_SKILL_CLOSE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.5.6",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE",
+        "T06_INSTALL_PACKAGING"
+      ],
+      "check_ids": [
+        "C12_SEVEN_SKILLS",
+        "C18_SKILL_REGISTRY"
+      ],
+      "rationale": "The shujuan-close Skill spec must be implemented with trigger, non-trigger, posture, first surface, completion and transitions.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S34_SKILL_CLOSE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S35_SKILL_EVOLVE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.5.7",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE",
+        "T06_INSTALL_PACKAGING"
+      ],
+      "check_ids": [
+        "C12_SEVEN_SKILLS",
+        "C18_SKILL_REGISTRY"
+      ],
+      "rationale": "The shujuan-evolve Skill spec must be implemented with trigger, non-trigger, posture, first surface, completion and transitions.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S35_SKILL_EVOLVE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S36_RECALL_MANUAL",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.6",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T08_RECALL_BENCH"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE",
+        "T08_RECALL_BENCH"
+      ],
+      "check_ids": [
+        "C14_ATTENTION_RECALL_TEMPLATES",
+        "C24_RECALL_BENCHMARK_SET",
+        "C25_RECALL_METRICS"
+      ],
+      "rationale": "Recall manual covers Claim Ledger, search ladder, frontier ranking, budgets, and stop decision.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S36_RECALL_MANUAL with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S37_HARNESS_MANUAL",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.7",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T03_METHOD_POLICY",
+        "T04_SKILL_SURFACE"
+      ],
+      "check_ids": [
+        "C09_ROUTE_METHOD_OUTPUT",
+        "C12_SEVEN_SKILLS",
+        "C09B_ROUTE_PURE_NO_SIDE_EFFECTS"
+      ],
+      "rationale": "Harness must become a state machine outputting sovereignty/relation/method/endpoint/role/mode/first surface/write posture.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S37_HARNESS_MANUAL with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S38_ATTENTION_CONTRACT",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.8",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE"
+      ],
+      "check_ids": [
+        "C14_ATTENTION_RECALL_TEMPLATES"
+      ],
+      "rationale": "Attention Contract is shared across Skills and not a separate eighth Skill.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S38_ATTENTION_CONTRACT with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S39_ROLE_PROFILES",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.9",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T05_ROLE_PLANE"
+      },
+      "task_ids": [
+        "T05_ROLE_PLANE"
+      ],
+      "check_ids": [
+        "C15_ROLE_TOML",
+        "C16_DELEGATE_METHOD_SPECIFIC",
+        "C17_REVIEWER_READONLY"
+      ],
+      "rationale": "Five custom agent profiles must express role boundaries while closure stays with controller.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S39_ROLE_PROFILES with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S40_HOOK_SCHEME",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.10",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T07_HOOKS"
+      },
+      "task_ids": [
+        "T07_HOOKS"
+      ],
+      "check_ids": [
+        "C21_HOOK_METHOD_HINT",
+        "C22_HOOK_PRETOOL_GUARD",
+        "C23_HOOK_DISABLED_FALLBACK"
+      ],
+      "rationale": "Hook implementation is optional support, with P0 correctness independent of hooks.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S40_HOOK_SCHEME with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S41_FIX_A_ROUTE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.11",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T02_ROUTE_ROLE_REPAIR"
+      },
+      "task_ids": [
+        "T02_ROUTE_ROLE_REPAIR",
+        "T09_ROUTE_METHOD_EVAL"
+      ],
+      "check_ids": [
+        "C05_ROUTE_TYPED_FACTS",
+        "C06_NEGATED_CLOSE_DELEGATE",
+        "C27_ROUTE_METRICS"
+      ],
+      "rationale": "Fix A requires negation-aware route intent and independent review priority.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S41_FIX_A_ROUTE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S42_FIX_B_ROLE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.11",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T02_ROUTE_ROLE_REPAIR"
+      },
+      "task_ids": [
+        "T02_ROUTE_ROLE_REPAIR"
+      ],
+      "check_ids": [
+        "C07_ROLE_POLICY_ALIAS"
+      ],
+      "rationale": "Fix B requires role aliases and invalid role fail-closed.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S42_FIX_B_ROLE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S43_PACKAGE_HARDCODE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.12",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T06_INSTALL_PACKAGING"
+      },
+      "task_ids": [
+        "T06_INSTALL_PACKAGING"
+      ],
+      "check_ids": [
+        "C18_SKILL_REGISTRY",
+        "C19_INSTALL_SKILLS",
+        "C20_INSTALL_DOCTOR_PACKAGE",
+        "C20B_PACKAGE_MANIFEST_README_CHANGESET",
+        "C20C_ASSET_SYNC_CLEAN_INIT"
+      ],
+      "rationale": "Existing package/install hardcodes core and must move to registry-driven multiple Skills/agents.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S43_PACKAGE_HARDCODE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S44_PHASE_P0_BASELINE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.13.P0",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T01_BASELINE"
+      },
+      "task_ids": [
+        "T01_BASELINE",
+        "T09_ROUTE_METHOD_EVAL",
+        "T08_RECALL_BENCH"
+      ],
+      "check_ids": [
+        "C01_BASELINE_SCHEMA",
+        "C02_ROUTE_DEFECT_FIXTURE",
+        "C03_ROLE_DEFECT_FIXTURE",
+        "C26_ROUTE_PROMPTS",
+        "C24_RECALL_BENCHMARK_SET"
+      ],
+      "rationale": "P0 baseline includes current failures, baseline counts, 72 prompts and 12 Recall benchmarks.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S44_PHASE_P0_BASELINE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S45_PHASE_P1_POLICY",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.13.P1",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T03_METHOD_POLICY"
+      },
+      "task_ids": [
+        "T02_ROUTE_ROLE_REPAIR",
+        "T03_METHOD_POLICY"
+      ],
+      "check_ids": [
+        "C05_ROUTE_TYPED_FACTS",
+        "C07_ROLE_POLICY_ALIAS",
+        "C08_METHOD_CONTRACT_SERVICE",
+        "C09_ROUTE_METHOD_OUTPUT",
+        "C10_NO_GOVERNANCE_SIDE_EFFECTS",
+        "C09B_ROUTE_PURE_NO_SIDE_EFFECTS"
+      ],
+      "rationale": "P1 shared policy repairs are active requirements for v11.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S45_PHASE_P1_POLICY with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S46_PHASE_P2_SKILLS",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.13.P2",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE"
+      ],
+      "check_ids": [
+        "C11_AGENTS_CONTRACTED",
+        "C12_SEVEN_SKILLS",
+        "C13_CORE_SHIM",
+        "C14_ATTENTION_RECALL_TEMPLATES"
+      ],
+      "rationale": "P2 AGENTS contraction and seven Skills are active requirements for v11.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S46_PHASE_P2_SKILLS with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S47_PHASE_P3_PACKAGE_ROLE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.13.P3",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T06_INSTALL_PACKAGING"
+      },
+      "task_ids": [
+        "T05_ROLE_PLANE",
+        "T06_INSTALL_PACKAGING"
+      ],
+      "check_ids": [
+        "C15_ROLE_TOML",
+        "C18_SKILL_REGISTRY",
+        "C19_INSTALL_SKILLS",
+        "C20_INSTALL_DOCTOR_PACKAGE",
+        "C20B_PACKAGE_MANIFEST_README_CHANGESET",
+        "C20C_ASSET_SYNC_CLEAN_INIT"
+      ],
+      "rationale": "P3 roles and packaging are active v11 requirements.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S47_PHASE_P3_PACKAGE_ROLE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S48_PHASE_P4_HOOKS",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.13.P4",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T07_HOOKS"
+      },
+      "task_ids": [
+        "T07_HOOKS"
+      ],
+      "check_ids": [
+        "C21_HOOK_METHOD_HINT",
+        "C22_HOOK_PRETOOL_GUARD",
+        "C23_HOOK_DISABLED_FALLBACK"
+      ],
+      "rationale": "P4 optional hooks are implemented as optional features but not authoritative safety boundaries.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S48_PHASE_P4_HOOKS with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S49_PHASE_P5_DOGFOOD",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.13.P5",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T11_DOGFOOD_CLOSEOUT"
+      },
+      "task_ids": [
+        "T08_RECALL_BENCH",
+        "T09_ROUTE_METHOD_EVAL",
+        "T11_DOGFOOD_CLOSEOUT"
+      ],
+      "check_ids": [
+        "C25_RECALL_METRICS",
+        "C27_ROUTE_METRICS",
+        "C30_LIVE_RUNTIME_STATUS",
+        "C31_E2E_EXECUTE_DELEGATE_CLOSE",
+        "C32_TWO_REVIEWER_ADOPTIONS"
+      ],
+      "rationale": "P5 dogfood and closeout are required before v11 completion claim.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S49_PHASE_P5_DOGFOOD with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S50_ACCEPT_CODEX_SURFACE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.14.1",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T04_SKILL_SURFACE"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE",
+        "T06_INSTALL_PACKAGING"
+      ],
+      "check_ids": [
+        "C11_AGENTS_CONTRACTED",
+        "C12_SEVEN_SKILLS",
+        "C13_CORE_SHIM",
+        "C20_INSTALL_DOCTOR_PACKAGE",
+        "C20B_PACKAGE_MANIFEST_README_CHANGESET",
+        "C20C_ASSET_SYNC_CLEAN_INIT"
+      ],
+      "rationale": "Codex surface acceptance criteria must be tested.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S50_ACCEPT_CODEX_SURFACE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S51_ACCEPT_ROUTE_METHOD",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.14.2",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T09_ROUTE_METHOD_EVAL"
+      },
+      "task_ids": [
+        "T09_ROUTE_METHOD_EVAL"
+      ],
+      "check_ids": [
+        "C26_ROUTE_PROMPTS",
+        "C27_ROUTE_METRICS"
+      ],
+      "rationale": "Route/method acceptance metrics must be tested.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S51_ACCEPT_ROUTE_METHOD with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S52_ACCEPT_RECALL",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.14.3",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T08_RECALL_BENCH"
+      },
+      "task_ids": [
+        "T08_RECALL_BENCH"
+      ],
+      "check_ids": [
+        "C24_RECALL_BENCHMARK_SET",
+        "C25_RECALL_METRICS"
+      ],
+      "rationale": "Recall acceptance metrics must be tested.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S52_ACCEPT_RECALL with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S53_ACCEPT_ROLE_AUTHORITY",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.14.4",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T05_ROLE_PLANE"
+      },
+      "task_ids": [
+        "T02_ROUTE_ROLE_REPAIR",
+        "T05_ROLE_PLANE"
+      ],
+      "check_ids": [
+        "C07_ROLE_POLICY_ALIAS",
+        "C17_REVIEWER_READONLY"
+      ],
+      "rationale": "Role/authority acceptance metrics must be tested.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S53_ACCEPT_ROLE_AUTHORITY with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S54_ACCEPT_RUNTIME_RELEASE",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.14.5",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T11_DOGFOOD_CLOSEOUT"
+      },
+      "task_ids": [
+        "T06_INSTALL_PACKAGING",
+        "T11_DOGFOOD_CLOSEOUT"
+      ],
+      "check_ids": [
+        "C20_INSTALL_DOCTOR_PACKAGE",
+        "C30_LIVE_RUNTIME_STATUS",
+        "C35_RELEASE_EVIDENCE",
+        "C20B_PACKAGE_MANIFEST_README_CHANGESET",
+        "C20C_ASSET_SYNC_CLEAN_INIT",
+        "C35B_CLOSEOUT_GATES",
+        "C35C_FINAL_ENDPOINT_REPORT"
+      ],
+      "rationale": "Runtime/schema/release acceptance metrics must be tested.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S54_ACCEPT_RUNTIME_RELEASE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S55_V11_COMPAT",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.15.v11.0",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T06_INSTALL_PACKAGING"
+      },
+      "task_ids": [
+        "T04_SKILL_SURFACE",
+        "T06_INSTALL_PACKAGING",
+        "T12_DOCS_RELEASE"
+      ],
+      "check_ids": [
+        "C13_CORE_SHIM",
+        "C19_INSTALL_SKILLS",
+        "C33_MIGRATION_NOTE",
+        "C20B_PACKAGE_MANIFEST_README_CHANGESET"
+      ],
+      "rationale": "v11.0 compatibility requires core shim and install alias without DB migration.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S55_V11_COMPAT with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S56_V11_1_CLEANUP",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.15.v11.1",
+      "classification": "P1",
+      "status": "deferred",
+      "graph_destination": {
+        "kind": "future_scope",
+        "id": "v11.1-core-removal"
+      },
+      "task_ids": [],
+      "check_ids": [],
+      "rationale": "v11.1 core deletion is explicitly a future cleanup after usage logs prove no dependency; not a v11.0 blocker.",
+      "promotion_rule": "Promote only after v11.0 usage logs prove core shim no longer needed.",
+      "reopen_rule": "Create explicit v11.1 cleanup tasks/checks for core shim removal and alias deletion."
+    },
+    {
+      "id": "S57_ROLLBACK",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.15.rollback",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T12_DOCS_RELEASE"
+      },
+      "task_ids": [
+        "T12_DOCS_RELEASE"
+      ],
+      "check_ids": [
+        "C34_GLOSSARY_RISK_ROLLBACK"
+      ],
+      "rationale": "Rollback rules must be documented and must not imply DB reverse migration for P0.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S57_ROLLBACK with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S58_RISKS",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.16",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T12_DOCS_RELEASE"
+      },
+      "task_ids": [
+        "T12_DOCS_RELEASE",
+        "T09_ROUTE_METHOD_EVAL",
+        "T08_RECALL_BENCH",
+        "T06_INSTALL_PACKAGING"
+      ],
+      "check_ids": [
+        "C27_ROUTE_METRICS",
+        "C25_RECALL_METRICS",
+        "C20_INSTALL_DOCTOR_PACKAGE",
+        "C34_GLOSSARY_RISK_ROLLBACK",
+        "C20B_PACKAGE_MANIFEST_README_CHANGESET",
+        "C20C_ASSET_SYNC_CLEAN_INIT"
+      ],
+      "rationale": "The eight risks and defenses must be represented in tests/docs, not left as prose only.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S58_RISKS with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S59_COMPLETE_DELIVERABLES",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.17",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T12_DOCS_RELEASE"
+      },
+      "task_ids": [
+        "T01_BASELINE",
+        "T02_ROUTE_ROLE_REPAIR",
+        "T03_METHOD_POLICY",
+        "T04_SKILL_SURFACE",
+        "T05_ROLE_PLANE",
+        "T06_INSTALL_PACKAGING",
+        "T07_HOOKS",
+        "T08_RECALL_BENCH",
+        "T09_ROUTE_METHOD_EVAL",
+        "T11_DOGFOOD_CLOSEOUT",
+        "T12_DOCS_RELEASE"
+      ],
+      "check_ids": [
+        "C35_RELEASE_EVIDENCE",
+        "C35B_CLOSEOUT_GATES",
+        "C35C_FINAL_ENDPOINT_REPORT"
+      ],
+      "rationale": "The complete-deliverables list is the final release checklist and cannot be reduced to writing seven SKILL.md files.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S59_COMPLETE_DELIVERABLES with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S60_TERMS",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#5",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T12_DOCS_RELEASE"
+      },
+      "task_ids": [
+        "T12_DOCS_RELEASE",
+        "T04_SKILL_SURFACE",
+        "T08_RECALL_BENCH"
+      ],
+      "check_ids": [
+        "C14_ATTENTION_RECALL_TEMPLATES",
+        "C33_MIGRATION_NOTE",
+        "C34_GLOSSARY_RISK_ROLLBACK"
+      ],
+      "rationale": "Policy/Method/Role/Enforcement/Fact planes and Recall terms must enter glossary and templates.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S60_TERMS with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S61_EVIDENCE_INDEX",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#appendix-a-b",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T01_BASELINE"
+      },
+      "task_ids": [
+        "T01_BASELINE",
+        "T11_DOGFOOD_CLOSEOUT"
+      ],
+      "check_ids": [
+        "C01_BASELINE_SCHEMA",
+        "C35_RELEASE_EVIDENCE",
+        "C35B_CLOSEOUT_GATES",
+        "C35C_FINAL_ENDPOINT_REPORT"
+      ],
+      "rationale": "Evidence index and command summaries define the baseline and final verification surfaces.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S61_EVIDENCE_INDEX with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S62_NEW_TABLES_NON_GOAL",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#2.4",
+      "classification": "non-goal",
+      "status": "out_of_scope",
+      "graph_destination": {
+        "kind": "non_goal",
+        "id": "no-new-business-tables-v11-p0"
+      },
+      "task_ids": [],
+      "check_ids": [],
+      "rationale": "Adding new business tables is explicitly outside v11 P0 unless later dogfood proves independent lifecycle and admission gates.",
+      "promotion_rule": "Promote only by a new source-backed schema admission decision after v11 dogfood.",
+      "reopen_rule": "Reopen as a separate schema proposal with the eight admission gates."
+    },
+    {
+      "id": "S63_STOP_HOOK_DEFER",
+      "source_ref": "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#4.10",
+      "classification": "deferred",
+      "status": "deferred",
+      "graph_destination": {
+        "kind": "future_scope",
+        "id": "stop-hook-p2"
+      },
+      "task_ids": [],
+      "check_ids": [],
+      "rationale": "Stop hook is explicitly not P0/P1; evaluate only after completion contracts and evals prove a need.",
+      "promotion_rule": "Promote only after route/method evals show a concrete stop-hook need.",
+      "reopen_rule": "Create a separate hook experiment task/check chain."
+    },
+    {
+      "id": "S64_CONTROLLER_REVIEW_GATE",
+      "source_ref": "user-prompt-2026-06-26#three-reviewers",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T13_CONTROLLER_REVIEW_GATE"
+      },
+      "task_ids": [
+        "T13_CONTROLLER_REVIEW_GATE"
+      ],
+      "check_ids": [
+        "C04_TASK_CHAIN_REVIEWERS"
+      ],
+      "rationale": "User explicitly required three gpt-5.4 high subagents to audit the task chain until all pass before execution.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S64_CONTROLLER_REVIEW_GATE with explicit task/check rows and the original source reference."
+    },
+    {
+      "id": "S65_WORKER_MODEL_CODEGRAPH",
+      "source_ref": "user-prompt-2026-06-26#worker",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {
+        "kind": "task",
+        "id": "T10_IMPACT_DELEGATION"
+      },
+      "task_ids": [
+        "T10_IMPACT_DELEGATION"
+      ],
+      "check_ids": [
+        "C28_CODEGRAPH_BEFORE_EDITS",
+        "C29_IMPACT_MATERIAL_BOUNDARY"
+      ],
+      "rationale": "User explicitly requested controller mode, a 5.5 medium executor, and codegraph-like assistance before code edits.",
+      "promotion_rule": "Already active in v11.0 execution.",
+      "reopen_rule": "Reopen by restoring source item S65_WORKER_MODEL_CODEGRAPH with explicit task/check rows and the original source reference."
+    }
+  ]
+}

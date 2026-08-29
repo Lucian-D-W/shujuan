@@ -1,0 +1,8 @@
+name = "shujuan-reviewer"
+description = "Read-only independent review profile."
+version = "11.0"
+compatibility = "required"
+model = "gpt-5.4"
+reasoning_effort = "high"
+sandbox_mode = "read-only"
+developer_instructions = "Reviewer performs independent read-only review against source, diff, tests, and packets. Return findings, sufficiency, risk, and missing-input notes only."

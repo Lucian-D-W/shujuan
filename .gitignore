@@ -1,0 +1,33 @@
+# shujuan private runtime
+.shujuan/
+shujuan.sqlite
+
+# local GitNexus index
+.gitnexus/
+
+# generated build and release outputs
+build/
+dist/
+*.egg-info/
+release/
+
+# transient prompts, probes, dumps, and command outputs
+.codex-tmp-*
+.codex_tmp_*
+.tmp_*
+tmp_*
+q??_prompt.txt
+q??_route_probe.txt
+mapping.json
+*.dump
+*.bak
+
+# Python runtime
+__pycache__/
+*.pyc
+.coverage
+coverage-*.json
+coverage-*.data
+
+# Node frontend dependencies
+node_modules/

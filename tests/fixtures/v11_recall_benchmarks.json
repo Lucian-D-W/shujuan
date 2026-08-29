@@ -1,0 +1,134 @@
+[
+  {
+    "id": "R01",
+    "kind": "historical",
+    "question": "Why did No Governance become highest-priority exit?",
+    "expected_surface": "endpoint report plus AGENTS",
+    "anchors": ["docs/history/shujuan-v11-method-plane-design-2026-06-25.md#A.1", "AGENTS.md#Four Gates"],
+    "report_evidence_labels": ["R-HISTORY-09", "F-AGENTS-01"],
+    "stop_frontier": ["live PostgreSQL closeout reports are out of Recall scope unless controller promotes them"],
+    "candidate_reduction": {"predicate": "targeted_less_than_naive", "naive_surface": "full text no_governance search", "target_surface": "history plus policy and route guard surfaces"},
+    "db_writes_allowed": false
+  },
+  {
+    "id": "R02",
+    "kind": "historical",
+    "question": "How did endpoint meaning change from v2 to v10?",
+    "expected_surface": "history changelog",
+    "anchors": ["docs/history/shujuan-v11-method-plane-design-2026-06-25.md#A.1"],
+    "report_evidence_labels": ["R-HISTORY-02", "R-HISTORY-08"],
+    "stop_frontier": ["old release archives only if the changelog/report labels conflict"],
+    "candidate_reduction": {"predicate": "targeted_less_than_naive", "naive_surface": "all endpoint mentions", "target_surface": "history changelog and v10 gate sections"},
+    "db_writes_allowed": false
+  },
+  {
+    "id": "R03",
+    "kind": "historical",
+    "question": "Why is PostgreSQL success required?",
+    "expected_surface": "postgres runtime reference",
+    "anchors": ["docs/history/shujuan-v11-method-plane-design-2026-06-25.md#2.4", "AGENTS.md#Runtime"],
+    "report_evidence_labels": ["R-HISTORY-03", "F-SCHEMA-02"],
+    "stop_frontier": ["runtime startup logs only when current readiness is the asked question"],
+    "candidate_reduction": {"predicate": "targeted_less_than_naive", "naive_surface": "all database mentions", "target_surface": "runtime and schema stewardship surfaces"},
+    "db_writes_allowed": false
+  },
+  {
+    "id": "R04",
+    "kind": "code_why",
+    "question": "Why does route guard require closeout inputs?",
+    "expected_surface": "route.py",
+    "anchors": ["shujuan/commands/route.py", "docs/history/shujuan-v11-task-chain-2026-06-26.json#C09"],
+    "report_evidence_labels": ["F-ROUTE-CODE-01", "C09_ROUTE_METHOD_OUTPUT"],
+    "stop_frontier": ["Close skill details if route.py and task-chain contract disagree"],
+    "candidate_reduction": {"predicate": "targeted_less_than_naive", "naive_surface": "all closeout mentions", "target_surface": "route guard and method policy code"},
+    "db_writes_allowed": false
+  },
+  {
+    "id": "R05",
+    "kind": "code_why",
+    "question": "Why are provider outputs material only?",
+    "expected_surface": "delegation/evidence references",
+    "anchors": ["AGENTS.md#Boundaries", "shujuan/commands/delegate_handlers.py"],
+    "report_evidence_labels": ["R-HISTORY-05", "S16_ROLE_PLANE"],
+    "stop_frontier": ["provider command internals only if material/adoption path is ambiguous"],
+    "candidate_reduction": {"predicate": "targeted_less_than_naive", "naive_surface": "all provider mentions", "target_surface": "delegate material and closeout boundary surfaces"},
+    "db_writes_allowed": false
+  },
+  {
+    "id": "R06",
+    "kind": "code_why",
+    "question": "Why do unknown roles fail closed?",
+    "expected_surface": "role_policy.py",
+    "anchors": ["shujuan/services/role_policy.py", "docs/history/shujuan-v11-task-chain-2026-06-26.json#C07"],
+    "report_evidence_labels": ["F-ROLE-CODE-01", "C07_ROLE_POLICY_ALIAS"],
+    "stop_frontier": ["endpoint brief implementation only if role capsule output differs"],
+    "candidate_reduction": {"predicate": "targeted_less_than_naive", "naive_surface": "all role mentions", "target_surface": "role policy and endpoint role capsule tests"},
+    "db_writes_allowed": false
+  },
+  {
+    "id": "R07",
+    "kind": "lineage",
+    "question": "What is v11's relation to v10 ontology gates?",
+    "expected_surface": "source plan",
+    "anchors": ["docs/history/shujuan-v11-method-plane-design-2026-06-25.md#2.2", "AGENTS.md#Four Gates"],
+    "report_evidence_labels": ["R-HISTORY-08", "S13_V10_GATES"],
+    "stop_frontier": ["schema files only if the answer needs physical table evidence"],
+    "candidate_reduction": {"predicate": "targeted_less_than_naive", "naive_surface": "all v10/v11 mentions", "target_surface": "source plan v10 gate lineage"},
+    "db_writes_allowed": false
+  },
+  {
+    "id": "R08",
+    "kind": "lineage",
+    "question": "Which v11.1 cleanup is deferred?",
+    "expected_surface": "task chain",
+    "anchors": ["docs/history/shujuan-v11-task-chain-2026-06-26.json#S56_V11_1_CLEANUP"],
+    "report_evidence_labels": ["S56_V11_1_CLEANUP"],
+    "stop_frontier": ["future controller decisions only if a new promotion source exists"],
+    "candidate_reduction": {"predicate": "targeted_less_than_naive", "naive_surface": "all cleanup mentions", "target_surface": "task-chain deferred source items"},
+    "db_writes_allowed": false
+  },
+  {
+    "id": "R09",
+    "kind": "contradiction",
+    "question": "When report and route behavior disagree, what wins?",
+    "expected_surface": "source plan and tests",
+    "anchors": ["docs/history/shujuan-v11-method-plane-design-2026-06-25.md#1.3.4", "tests/v11_method_plane.py"],
+    "report_evidence_labels": ["R-V10-REPORT-01", "F-TEST-ROUTE-01"],
+    "stop_frontier": ["live report rerun only if the user asks current endpoint status"],
+    "candidate_reduction": {"predicate": "targeted_less_than_naive", "naive_surface": "all report and route mentions", "target_surface": "contradiction section and regression tests"},
+    "db_writes_allowed": false
+  },
+  {
+    "id": "R10",
+    "kind": "contradiction",
+    "question": "Why did controller role brief previously show worker authority?",
+    "expected_surface": "endpoint.py and role fixtures",
+    "anchors": ["docs/history/shujuan-v11-method-plane-design-2026-06-25.md#1.3.5", "shujuan/services/role_policy.py"],
+    "report_evidence_labels": ["F-TEST-ROLE-01", "F-ROLE-CODE-01"],
+    "stop_frontier": ["database role exports only if current code and fixture diverge"],
+    "candidate_reduction": {"predicate": "targeted_less_than_naive", "naive_surface": "all controller role mentions", "target_surface": "role bug analysis and policy code"},
+    "db_writes_allowed": false
+  },
+  {
+    "id": "R11",
+    "kind": "current_vs_history",
+    "question": "Is shujuan-core still primary in v11?",
+    "expected_surface": "AGENTS and skills",
+    "anchors": ["AGENTS.md#Method Map", ".agents/skills/shujuan-core/SKILL.md"],
+    "report_evidence_labels": ["C13_CORE_SHIM", "S55_V11_COMPAT"],
+    "stop_frontier": ["v11.1 usage logs only if cleanup promotion is being decided"],
+    "candidate_reduction": {"predicate": "targeted_less_than_naive", "naive_surface": "all shujuan-core mentions", "target_surface": "method map and core compatibility shim"},
+    "db_writes_allowed": false
+  },
+  {
+    "id": "R12",
+    "kind": "current_vs_history",
+    "question": "Are new DB tables part of v11.0?",
+    "expected_surface": "task chain non-goals",
+    "anchors": ["docs/history/shujuan-v11-task-chain-2026-06-26.json#S62_NEW_TABLES_NON_GOAL", "docs/history/shujuan-v11-method-plane-design-2026-06-25.md#2.4"],
+    "report_evidence_labels": ["S62_NEW_TABLES_NON_GOAL", "F-SCHEMA-02"],
+    "stop_frontier": ["schema admission proposal only if explicitly promoted later"],
+    "candidate_reduction": {"predicate": "targeted_less_than_naive", "naive_surface": "all schema/table mentions", "target_surface": "non-goal and schema stewardship surfaces"},
+    "db_writes_allowed": false
+  }
+]

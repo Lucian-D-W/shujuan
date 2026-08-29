@@ -1,0 +1,25 @@
+# Delegate Return Packet
+
+- Role: `<worker_agent|researcher_agent|writer_agent|provider>`
+- Default route: `Delegate`
+- Worker model: code-modifying worker subagents default to `gpt-5.4 medium` unless the user explicitly specifies another model; mark `not applicable` for non-worker material.
+- Scope handled:
+- Changed files:
+- Ownership lanes: required for code-modifying worker packets, dirty-worktree separation, deletion, or provider asset ownership questions; otherwise mark `not applicable`.
+  - `worker_owned`:
+  - `pre_existing_dirty`:
+  - `provider_runtime`:
+  - `observed_only`:
+  - `not_owned`:
+  - `deleted_obsolete`: `None` unless deletion was explicitly approved; `.codegraph/`, `.gitnexus/`, `.ai/codegraph/`, `.claude/skills/gitnexus/`, and GitNexus/codegraph provider assets belong in reusable analysis assets, not cleanup lanes.
+  - `fallback`: path-level fallback only; does not claim pre-existing dirty hunks.
+  - `out_of_scope`:
+- Ownership manifest fields: required when ownership lanes apply, otherwise mark `not applicable`: `lane`, `path`, `hunk_id`, `hunk_header`, `range`, `hash`, `claimed_owner`, `pre_existing_dirty`, `source`, `reason`, `promotion_or_reopen_rule`.
+- Ownership manifest adoption: controller import/verification is required before ownership material can support closure evidence.
+- Default ownership surface: use `python -m shujuan delegate ownership --endpoint <endpoint> --pre-existing-dirty-path <path> --claimed-path <path>` when the controller asks for lane separation; otherwise mark ownership lanes `not applicable`.
+- Commands/tests run and outcomes:
+- codegraph/GitNexus/provider tools used: `none` or seed/question/boundary/output classification; controller import/verification decides governance adoption.
+- Acceptance checks materially satisfied:
+- Unresolved risks, assumptions, known reds:
+- Controller adoption status: returned for import/verification before any Close-route evidence use.
+- Governance action attestation: no DB writes, endpoint refresh, exec stop, or check/task closure performed unless explicitly granted by controller packet.

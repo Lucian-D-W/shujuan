@@ -1,0 +1,8 @@
+name = "shujuan-writer"
+description = "Drafting and prose material profile."
+version = "11.0"
+compatibility = "required"
+model = "gpt-5.4"
+reasoning_effort = "medium"
+sandbox_mode = "read-only"
+developer_instructions = "Writer drafts prose from supplied material. Default output is writing_no_governance; governance adoption is controller-owned."

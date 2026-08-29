@@ -1,0 +1,8 @@
+name = "shujuan-researcher"
+description = "Source-backed fact gathering profile."
+version = "11.0"
+compatibility = "required"
+model = "gpt-5.4"
+reasoning_effort = "medium"
+sandbox_mode = "read-only"
+developer_instructions = "Researcher gathers source-backed facts, separates observations from inference, and returns material for controller adoption."

@@ -1,0 +1,108 @@
+{
+  "schema": "shujuan.v11_2.verification_coverage",
+  "endpoint": "shujuan-v11.2-verification-repair-2026-06-28",
+  "generated_at": "2026-06-28",
+  "replay_metadata": {
+    "strict_replay_command": "python scripts/v11_2_replay_evidence.py --coverage docs/history/shujuan-v11.2-verification-coverage-2026-06-28.json --strict-p0",
+    "no_postgresql_budget_seconds": 60,
+    "postgresql_integration": "opt-in",
+    "package_containment": "repo-local files only; no provider index deletion required"
+  },
+  "checks": [
+    {
+      "task_key": "T01_AGENTS_KERNEL",
+      "check_key": "C01_AGENTS_ROUTE_GUARD_PURE",
+      "phase": "P0",
+      "evidence_status": "observed_pass",
+      "replay": {
+        "command": "python tests/v11_2_verification_repair.py",
+        "references": [
+          "AGENTS.md",
+          "shujuan/assets/AGENTS.md",
+          "tests/v11_2_verification_repair.py"
+        ]
+      }
+    },
+    {
+      "task_key": "T02_ROUTE_GUARD_PURE",
+      "check_key": "C07_ROUTE_PAYLOAD_WRITE_FIELDS",
+      "phase": "P0",
+      "evidence_status": "observed_pass",
+      "replay": {
+        "command": "python tests/v11_2_verification_repair.py",
+        "references": [
+          "shujuan/commands/route.py",
+          "tests/v11_2_verification_repair.py"
+        ]
+      }
+    },
+    {
+      "task_key": "T03_INDEPENDENT_REVIEW_INTENT",
+      "check_key": "C09_REVIEW_INDEPENDENTLY_DELEGATE",
+      "phase": "P0",
+      "evidence_status": "observed_pass",
+      "replay": {
+        "command": "python tests/v11_2_verification_repair.py",
+        "references": [
+          "shujuan/services/route_intent.py",
+          "tests/v11_2_verification_repair.py"
+        ]
+      }
+    },
+    {
+      "task_key": "T04_CODEX_HOOKS_SURFACE",
+      "check_key": "C11_METHOD_HINT_HOOK_SCHEMA",
+      "phase": "P0",
+      "evidence_status": "observed_pass",
+      "replay": {
+        "command": "python tests/v11_2_verification_repair.py",
+        "references": [
+          ".codex/hooks.json",
+          ".codex/hooks/shujuan-method-hint.py",
+          ".codex/hooks/shujuan-pretool-guard.py",
+          "shujuan/assets/hooks.json"
+        ]
+      }
+    },
+    {
+      "task_key": "T05_CUSTOM_AGENT_SCHEMA",
+      "check_key": "C15_AGENT_SCHEMA_TEST",
+      "phase": "P0",
+      "evidence_status": "observed_pass",
+      "replay": {
+        "command": "python tests/v11_2_verification_repair.py",
+        "references": [
+          ".codex/agents/shujuan-controller.toml",
+          "shujuan/assets/agents/shujuan-controller.toml",
+          "tests/v11_2_verification_repair.py"
+        ]
+      }
+    },
+    {
+      "task_key": "T06_REPLAYABLE_EVIDENCE",
+      "check_key": "C19_REPLAY_STRICT_P0",
+      "phase": "P0",
+      "evidence_status": "observed_pass",
+      "replay": {
+        "command": "python scripts/v11_2_replay_evidence.py --coverage docs/history/shujuan-v11.2-verification-coverage-2026-06-28.json --strict-p0",
+        "references": [
+          "scripts/v11_2_replay_evidence.py",
+          "docs/history/shujuan-v11.2-verification-coverage-2026-06-28.json"
+        ]
+      }
+    },
+    {
+      "task_key": "T08_INSTALL_LAYOUT_DOCTOR",
+      "check_key": "C23_DOCTOR_V11_2_FIELDS",
+      "phase": "P1",
+      "evidence_status": "observed_pass",
+      "replay": {
+        "command": "python tests/v11_2_verification_repair.py",
+        "references": [
+          "shujuan/commands/install_layout.py",
+          "tests/v11_2_verification_repair.py"
+        ]
+      }
+    }
+  ]
+}

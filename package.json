@@ -1,0 +1,11 @@
+{
+  "name": "shujuan-workbench-assets",
+  "private": true,
+  "description": "Read-only AntV G6 assets for shujuan projection workbench exports.",
+  "scripts": {
+    "check:g6": "node -e \"import('@antv/g6').then((m)=>{ if (!m.Graph) process.exit(1); console.log('@antv/g6 Graph import ok') })\""
+  },
+  "dependencies": {
+    "@antv/g6": "5.1.1"
+  }
+}

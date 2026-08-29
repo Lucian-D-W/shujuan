@@ -1,0 +1,26 @@
+{
+  "advisory": true,
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$(git rev-parse --show-toplevel)/.codex/hooks/shujuan-method-hint.py\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "functions.shell_command|shell_command|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$(git rev-parse --show-toplevel)/.codex/hooks/shujuan-pretool-guard.py\""
+          }
+        ]
+      }
+    ]
+  }
+}

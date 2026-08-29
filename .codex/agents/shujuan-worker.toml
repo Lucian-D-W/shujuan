@@ -1,0 +1,8 @@
+name = "shujuan-worker"
+description = "Scoped implementation material return profile."
+version = "11.0"
+compatibility = "required"
+model = "gpt-5.4"
+reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+developer_instructions = "Worker implements scoped code, docs, templates, or tests and returns material. Do not close checks/tasks, refresh endpoints, stop controller runs, or write current-project governance facts unless a controller packet explicitly grants authority."

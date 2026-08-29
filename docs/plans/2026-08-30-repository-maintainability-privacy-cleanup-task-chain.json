@@ -1,0 +1,151 @@
+{
+  "idempotency_key": "shujuan-repository-maintainability-privacy-cleanup-2026-08-30-v1",
+  "declares_no_closure": true,
+  "endpoint": {
+    "name": "shujuan-repository-maintainability-privacy-cleanup-2026-08-30"
+  },
+  "source_items": [
+    {
+      "id": "SRC-CLEAN-STRUCTURE",
+      "source_ref": "docs/plans/2026-08-30-repository-maintainability-privacy-cleanup.md#canonical-public-tree",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {"kind": "task", "id": "T02_CANONICAL_TREE"},
+      "task_ids": ["T02_CANONICAL_TREE"],
+      "check_ids": ["C02_ROOT_STRUCTURE", "C03_NO_GENERATED_TRACKING"],
+      "rationale": "A maintainable public repository needs one canonical source tree and no generated or private duplicates.",
+      "promotion_rule": "Active because the user explicitly requested a clean maintainable directory.",
+      "reopen_rule": "Reopen if generated/private roots re-enter Git or the root loses an explicit ownership purpose."
+    },
+    {
+      "id": "SRC-CLEAN-HISTORY",
+      "source_ref": "docs/plans/2026-08-30-repository-maintainability-privacy-cleanup.md#execution-sequence",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {"kind": "task", "id": "T01_PRIVATE_BACKUP_CLEAN_HISTORY"},
+      "task_ids": ["T01_PRIVATE_BACKUP_CLEAN_HISTORY"],
+      "check_ids": ["C01_BACKUP_VERIFIED", "C04_PUBLIC_HISTORY_PRIVACY"],
+      "rationale": "Existing commits contain material that must not be published; a verified private backup must precede a new public history.",
+      "promotion_rule": "Active before any destructive or history-changing operation.",
+      "reopen_rule": "Reopen if the backup cannot be cloned/verified or the public history exposes excluded material."
+    },
+    {
+      "id": "SRC-CREDENTIAL-HARDENING",
+      "source_ref": "docs/plans/2026-08-30-repository-maintainability-privacy-cleanup.md#observed-audit-facts",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {"kind": "task", "id": "T03_PRIVACY_CREDENTIALS"},
+      "task_ids": ["T03_PRIVACY_CREDENTIALS"],
+      "check_ids": ["C05_CREDENTIAL_ACL", "C06_SECRET_SCAN"],
+      "rationale": "The credential is not published but its inherited local ACL is broader than required.",
+      "promotion_rule": "Active as a local privacy hardening requirement.",
+      "reopen_rule": "Reopen if broad read/write ACLs return or a live credential appears in Git/database content."
+    },
+    {
+      "id": "SRC-RUNTIME-RETENTION",
+      "source_ref": "docs/plans/2026-08-30-repository-maintainability-privacy-cleanup.md#execution-sequence",
+      "classification": "P1",
+      "status": "active",
+      "graph_destination": {"kind": "task", "id": "T04_RUNTIME_RETENTION"},
+      "task_ids": ["T04_RUNTIME_RETENTION"],
+      "check_ids": ["C07_REFERENCES_INTACT", "C08_RUNTIME_READY"],
+      "rationale": "Large runtime accumulation can be cleaned only after reference reconciliation and backup.",
+      "promotion_rule": "Active because workspace cleanliness includes private runtime state.",
+      "reopen_rule": "Reopen if referenced files disappear, PostgreSQL is not ready, or unmanaged accumulation returns."
+    },
+    {
+      "id": "SRC-PACKAGE-VERIFY",
+      "source_ref": "docs/plans/2026-08-30-repository-maintainability-privacy-cleanup.md#acceptance-summary",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {"kind": "task", "id": "T05_PACKAGE_VERIFY"},
+      "task_ids": ["T05_PACKAGE_VERIFY"],
+      "check_ids": ["C09_PACKAGE_TESTS", "C10_GITHUB_READINESS"],
+      "rationale": "A clean tree is acceptable only when package/install/runtime surfaces still work and the publish audit passes.",
+      "promotion_rule": "Active as the final implementation verification lane.",
+      "reopen_rule": "Reopen on manifest drift, test failures, privacy findings, or remote-readiness failure."
+    },
+    {
+      "id": "SRC-REMOVE-ZHANGGONG",
+      "source_ref": "docs/plans/2026-08-30-repository-maintainability-privacy-cleanup.md#relation-matrix",
+      "classification": "P0",
+      "status": "active",
+      "graph_destination": {"kind": "task", "id": "T02_CANONICAL_TREE"},
+      "task_ids": ["T02_CANONICAL_TREE", "T05_PACKAGE_VERIFY"],
+      "check_ids": ["C03_NO_GENERATED_TRACKING", "C10_GITHUB_READINESS"],
+      "rationale": "The user explicitly superseded the zhanggong-assisted workflow: remove it completely, use GitNexus directly, and keep the remote absent until the publication privacy gate passes.",
+      "promotion_rule": "Active because this is an explicit privacy and maintainability revision.",
+      "reopen_rule": "Reopen if any active zhanggong file/reference/generated output returns or the publication audit can be bypassed."
+    }
+  ],
+  "tasks": [
+    {
+      "key": "T01_PRIVATE_BACKUP_CLEAN_HISTORY",
+      "title": "Preserve private history and create clean public root",
+      "body": "Capture all current non-ignored work on a temporary private branch, create and verify a protected external Git bundle, build a new public root history without private/generated material, then remove private local refs after the publication gate passes.",
+      "order": 1,
+      "phase": "P0",
+      "mandatory": true
+    },
+    {
+      "key": "T02_CANONICAL_TREE",
+      "title": "Establish canonical maintainable repository tree",
+      "body": "Keep one package source tree, formal tests/migrations/scripts, project-owned Shujuan agent/Codex surfaces, and curated durable docs; exclude zhanggong, build, release, egg-info, desktop archives, raw dumps, probes, caches, and historical execution packets.",
+      "order": 2,
+      "phase": "P0",
+      "mandatory": true
+    },
+    {
+      "key": "T03_PRIVACY_CREDENTIALS",
+      "title": "Harden credential handling and privacy gates",
+      "body": "Restrict credential-file ACLs at creation and for the current file, confirm live credentials/tokens/private keys are absent from public Git and database content, and keep values out of logs and reports.",
+      "order": 3,
+      "phase": "P0",
+      "mandatory": true
+    },
+    {
+      "key": "T04_RUNTIME_RETENTION",
+      "title": "Reconcile and conservatively clean local runtime state",
+      "body": "Preserve the live PostgreSQL cluster and every explicitly or implicitly referenced artifact; back up then remove/archive only files proven unreferenced, while reporting existing missing provider references.",
+      "order": 4,
+      "phase": "P1",
+      "mandatory": true
+    },
+    {
+      "key": "T05_PACKAGE_VERIFY",
+      "title": "Reconcile packaging and verify GitHub readiness",
+      "body": "Update ignore/package/manifest surfaces for the canonical tree, use GitNexus directly, run a repeatable publication privacy gate plus focused package/runtime checks, and stop before remote creation or push.",
+      "order": 5,
+      "phase": "P0",
+      "mandatory": true
+    }
+  ],
+  "checks": [
+    {"key": "C01_BACKUP_VERIFIED", "task_key": "T01_PRIVATE_BACKUP_CLEAN_HISTORY", "body": "A temporary private snapshot branch and external Git bundle pass verification before history replacement; after the public gate passes, local private refs and unreachable objects are removed while the protected external bundle remains complete and recoverable.", "expected_evidence_type": "artifact"},
+    {"key": "C02_ROOT_STRUCTURE", "task_key": "T02_CANONICAL_TREE", "body": "The public tree contains only documented canonical top-level surfaces and has no unexplained root files/directories.", "expected_evidence_type": "test_result"},
+    {"key": "C03_NO_GENERATED_TRACKING", "task_key": "T02_CANONICAL_TREE", "body": "Git tracks no zhanggong surface, build, egg-info, generated release, provider index, runtime database, dump, temporary prompt/probe, or private desktop archive content.", "expected_evidence_type": "test_result"},
+    {"key": "C04_PUBLIC_HISTORY_PRIVACY", "task_key": "T01_PRIVATE_BACKUP_CLEAN_HISTORY", "body": "The public history contains no raw database dump, excluded historical material, user-profile path, non-approved author email, or live credential/token/private key.", "expected_evidence_type": "test_result"},
+    {"key": "C05_CREDENTIAL_ACL", "task_key": "T03_PRIVACY_CREDENTIALS", "body": "The current and newly created PostgreSQL credential files have no broad read/write ACL and remain readable by the owning runtime context.", "expected_evidence_type": "test_result"},
+    {"key": "C06_SECRET_SCAN", "task_key": "T03_PRIVACY_CREDENTIALS", "body": "Boundary-aware scans find no live GitHub/OpenAI/AWS/private-key/current-database credential in the public tree, public history, or database content.", "expected_evidence_type": "test_result"},
+    {"key": "C07_REFERENCES_INTACT", "task_key": "T04_RUNTIME_RETENTION", "body": "Every database file reference that existed before cleanup still resolves; the four pre-existing missing provider references are reported separately and not misclaimed as repaired.", "expected_evidence_type": "test_result"},
+    {"key": "C08_RUNTIME_READY", "task_key": "T04_RUNTIME_RETENTION", "body": "PostgreSQL remains ready and schema status remains current after ACL/runtime cleanup.", "expected_evidence_type": "test_result"},
+    {"key": "C09_PACKAGE_TESTS", "task_key": "T05_PACKAGE_VERIFY", "body": "Focused PostgreSQL credential/runtime tests plus package, install-layout, manifest, and smoke checks pass or any baseline failure is explicitly separated.", "expected_evidence_type": "test_result"},
+    {"key": "C10_GITHUB_READINESS", "task_key": "T05_PACKAGE_VERIFY", "body": "Direct GitNexus detect-changes, the repeatable main-object publication gate, root-structure audit, privacy scan, and git status confirm a clean publishable local branch with no zhanggong surface; no remote exists or is pushed.", "expected_evidence_type": "test_result"}
+  ],
+  "closed_by_decomposition": false,
+  "review": {
+    "packet_requested": false,
+    "packet_generated": false,
+    "reviewer_executed": false,
+    "controller_adopted": false,
+    "evidence_imported": false,
+    "reviewer_role": "reviewer_agent",
+    "review_questions": [
+      "Does the clean public tree preserve all required runtime, package, migration, test, skill, and hook surfaces?",
+      "Does the public history exclude raw dumps, private archives, credentials, personal paths, and generated artifacts?",
+      "Does credential ACL hardening work on Windows without breaking postgres-dev init/reuse?",
+      "Were only proven-unreferenced runtime files cleaned after a recoverable backup?",
+      "Are pre-existing missing provider references clearly separated from cleanup regressions?"
+    ]
+  }
+}
